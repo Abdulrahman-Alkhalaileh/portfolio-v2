@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase"; // Import the Firestore instance
+import { db } from "../configs/firebase"; // Import the Firestore instance
+import Slider from "./Custom/Slider/Slider";
+import ProjectCard from "./Custom/ProjectCard";
+import ThemeSwitch from "./Custom/ThemeSwitch";
 
 const Projects = () => {
   const [projects, setProjects] = useState<any>([]);
+  const [currentIndex, setCurrentIndex] = useState<number>(1);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -15,16 +19,21 @@ const Projects = () => {
   }, []);
 
   return (
-    <div>
-      {projects.map((project: any, index: any) => (
-        <div key={index}>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <a href={project.url}>View Project</a>
-          <img src={project.imageUrl} alt="hi" width={500} />
-        </div>
-      ))}
-    </div>
+    <>
+    <ThemeSwitch/>
+      <Slider
+        count={projects.length}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      >
+        {projects.map(
+          (project: any, index: any) =>
+            currentIndex === index && (
+              <ProjectCard key={project.id} {...project} />
+            )
+        )}
+      </Slider>
+    </>
   );
 };
 
