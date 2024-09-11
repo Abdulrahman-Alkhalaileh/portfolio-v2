@@ -30,7 +30,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   return (
     <>
-      <Dialog maxWidth="md" {...props} onClose={handleClose} PaperProps={{sx:{boxShadow:'#000000d3 0px 0px 900px 900px'}}}>
+      <Dialog
+        maxWidth="md"
+        {...props}
+        onClose={handleClose}
+        PaperProps={{ sx: { boxShadow: "#000000d3 0px 0px 900px 900px" } }}
+      >
         <Stack direction="row" justifyContent="end" p={1}>
           <IconButton onClick={handleClose} disableRipple>
             <CloseIcon />
@@ -92,17 +97,18 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </Stack>
           </Stack>
           <Divider orientation="vertical" flexItem />
-          <Stack spacing={2} pt={{xs:0,lg:2}} alignItems="center" justifyContent="space-between">
+          <Stack
+            spacing={2}
+            pt={{ xs: 0, lg: 2 }}
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <Stack direction="row" gap={2} width="100%">
-              <Button
-                variant="contained"
-                disabled={!!!data.url}
-                sx={{ flex: 1 }}
-              >
-                <a href={data.url} target="__blank">
+              <a href={data.url} target="__blank" style={{ width: "100%" }}>
+                <Button variant="contained" disabled={!!!data.url} fullWidth>
                   Live Demo
-                </a>
-              </Button>
+                </Button>
+              </a>
               <a href={data.repo} target="__blank">
                 <GitHubIcon fontSize="large" />
               </a>
