@@ -68,7 +68,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
               <Chip
                 key={crypto.randomUUID()}
                 label={item}
-                sx={{ fontSize: { xs: 14,md:17, lg: 22 } }}
+                sx={{ fontSize: { xs: 14,md:17, lg: 22 },py:2.3 }}
               />
             ))}
           </Box>

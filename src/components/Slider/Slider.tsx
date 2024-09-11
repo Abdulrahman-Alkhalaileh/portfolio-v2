@@ -36,9 +36,7 @@ const Slider: React.FC<SliderProps> = ({
       <IconButton onClick={handlePrev}>
         <ArrowBackIosIcon fontSize="large" sx={{ width: { xs: 25, md: 35 } }} />
       </IconButton>
-
       <Box
-        minHeight={500}
         display="flex"
         flexDirection="column"
         alignItems="center"

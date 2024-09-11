@@ -89,7 +89,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                   <Chip
                     key={crypto.randomUUID()}
                     label={item}
-                    sx={{ fontSize: 22 }}
+                    sx={{ fontSize: 22,py:2.3 }}
                   />
                 ))}
               </Box>
@@ -103,7 +103,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             alignItems="center"
             justifyContent="space-between"
           >
-            <Stack direction="row" gap={2} width="100%">
+            <Stack direction="row" gap={2} width="100%" alignItems='center'>
               <a href={data.url} target="__blank" style={{ width: "100%" }}>
                 <Button variant="contained" disabled={!!!data.url} fullWidth>
                   Live Demo
