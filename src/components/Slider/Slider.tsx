@@ -2,10 +2,10 @@ import React from "react";
 import CarouselDots from "./CarouselDots";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Box, IconButton } from "@mui/material";
+import { Box, BoxProps, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 
-export interface SliderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SliderProps extends BoxProps {
   children: React.ReactNode;
   count: number;
   currentIndex: number;
@@ -32,7 +32,7 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-around">
+    <Box display="flex" alignItems="center" justifyContent="space-around" {...props}>
       <IconButton onClick={handlePrev}>
         <ArrowBackIosIcon fontSize="large" sx={{ width: { xs: 25, md: 35 } }} />
       </IconButton>
@@ -49,8 +49,16 @@ const Slider: React.FC<SliderProps> = ({
           key={currentIndex} // Key ensures re-render for each slide
           initial={{ x: direction.current === 1 ? 300 : -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{duration:0.3,ease:'easeOut'}}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           exit={{ x: direction.current === 1 ? -300 : 300, opacity: 0 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+          onDragEnd={(event, info) => {
+            if (info.offset.x > 0) handlePrev();
+            else handleNext();
+          }}
+          whileTap={{ cursor: "grabbing" }}
           style={{ display: "flex", gap: "2.5rem" }}
         >
           {children}
@@ -64,7 +72,10 @@ const Slider: React.FC<SliderProps> = ({
       </Box>
 
       <IconButton onClick={handleNext}>
-        <ArrowForwardIosIcon fontSize="large" sx={{ width: { xs: 25, md: 35 } }} />
+        <ArrowForwardIosIcon
+          fontSize="large"
+          sx={{ width: { xs: 25, md: 35 } }}
+        />
       </IconButton>
     </Box>
   );

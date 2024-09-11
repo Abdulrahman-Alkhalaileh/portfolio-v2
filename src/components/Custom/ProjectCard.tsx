@@ -32,6 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         justifyContent: "space-between",
         gap: 1,
         transition: 'all ease 0.5s',
+        borderRadius: 5,
       }}
     >
       <CardContent

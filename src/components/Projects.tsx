@@ -4,6 +4,7 @@ import { db } from "../configs/firebase"; // Import the Firestore instance
 import Slider from "./Slider/Slider";
 import ProjectCard from "./Custom/ProjectCard";
 import ThemeSwitch from "./Custom/ThemeSwitch";
+import { Box } from "@mui/material";
 
 const Projects = () => {
   const [projects, setProjects] = useState<any>([]);
@@ -19,7 +20,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <>
+    <Box mx={{ xs: 0, lg: 3, xl: 7 }}>
       <ThemeSwitch />
       <Slider
         count={projects.length}
@@ -33,7 +34,7 @@ const Projects = () => {
             )
         )}
       </Slider>
-    </>
+    </Box>
   );
 };
 

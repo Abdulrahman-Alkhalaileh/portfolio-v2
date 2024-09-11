@@ -11,7 +11,7 @@ export const getTheme = (mode: "dark" | "light") => {
         main: mode === "light" ? "#edf2ff" : "#2e323d",
       },
       background:{
-        paper: mode === "light" ? "#ffffffc9" : "#13193ad9"
+        paper: mode === "light" ? "#ffffffc1" : "#13193ad9"
       }
     },
     breakpoints: {

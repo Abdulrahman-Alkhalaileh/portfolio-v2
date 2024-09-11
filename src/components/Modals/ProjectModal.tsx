@@ -34,11 +34,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         maxWidth="md"
         {...props}
         onClose={handleClose}
-        PaperProps={{ sx: { boxShadow: "#000000d3 0px 0px 900px 900px" } }}
+        PaperProps={{
+          sx: { boxShadow: "#000000d3 0px 0px 900px 900px", borderRadius: 5 },
+        }}
       >
-        <Stack direction="row" justifyContent="end" p={1}>
+        <Stack direction="row" justifyContent="end" px={1}>
           <IconButton onClick={handleClose} disableRipple>
-            <CloseIcon />
+            <CloseIcon fontSize="large"/>
           </IconButton>
         </Stack>
         <Divider />
@@ -89,7 +91,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                   <Chip
                     key={crypto.randomUUID()}
                     label={item}
-                    sx={{ fontSize: 22,py:2.3 }}
+                    sx={{ fontSize: 22, py: 2.3 }}
                   />
                 ))}
               </Box>
@@ -103,7 +105,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             alignItems="center"
             justifyContent="space-between"
           >
-            <Stack direction="row" gap={2} width="100%" alignItems='center'>
+            <Stack direction="row" gap={2} width="100%" alignItems="center">
               <a href={data.url} target="__blank" style={{ width: "100%" }}>
                 <Button variant="contained" disabled={!!!data.url} fullWidth>
                   Live Demo
