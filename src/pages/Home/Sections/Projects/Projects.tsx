@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Slider from "../../../../components/Slider/Slider";
 import ProjectCard from "../../../../components/Custom/ProjectCard";
-import ThemeSwitch from "../../../../components/Custom/ThemeSwitch";
 import { Box } from "@mui/material";
 import { fetchData} from "../../../../helpers/fetchData";
 import { ProjectType } from "../../../../helpers/types";
@@ -16,7 +15,6 @@ const Projects = () => {
 
   return (
     <Box >
-      <ThemeSwitch />
       <Slider
         count={projects.length}
         currentIndex={currentIndex}

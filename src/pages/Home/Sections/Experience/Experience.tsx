@@ -1,9 +1,10 @@
-import { Box, BoxProps } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Box, BoxProps } from "@mui/material";
 import AnimatedStack from "../../../../components/Slider/Stack3D/AnimatedStack";
 import ViewInfo from "./partials/ViewInfo";
 import { fetchData } from "../../../../helpers/fetchData";
 import { ExperienceType } from "../../../../helpers/types";
+import ProgressBar from "../../../../components/Slider/Stack3D/ProgressBar";
 
 export interface ExperienceProps extends BoxProps {}
 
@@ -18,7 +19,8 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
   }, []);
 
   return (
-    <Box height={{ xs: 350, lg: 500 }} p={1}>
+    <Box height={{ xs: 400, lg: 550 }} p={1}>
+      <ProgressBar index={index} count={experience.length}/>
       <AnimatedStack
         index={index}
         setIndex={setIndex}
