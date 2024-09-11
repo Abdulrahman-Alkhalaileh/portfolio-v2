@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { ProjectType } from "../Custom/ProjectCard";
+import { ProjectType } from "../../helpers/types";
 
 export interface ProjectModalProps extends DialogProps {
   title: string;

@@ -11,7 +11,8 @@ export const getTheme = (mode: "dark" | "light") => {
         main: mode === "light" ? "#edf2ff" : "#2e323d",
       },
       background:{
-        paper: mode === "light" ? "#ffffffc1" : "#13193ad9"
+        paper: mode === "light" ? "#ffffffc1" : "#13193ad9",
+        default: mode === "light" ? "#ffffffed" : "#13193aed"
       }
     },
     breakpoints: {
@@ -28,15 +29,14 @@ export const getTheme = (mode: "dark" | "light") => {
       h1: {
         // 40px
         fontSize: "4.5rem",
-        textShadow: '1px 1px 10px #fff',
+        textShadow: '1px 0px 3px #fff',
         fontWeight: 600,
-        fontFamily: "'Caveat', cursive",
+        // fontFamily: "'Caveat', cursive",
       },
       h2: {
         // 32px
         fontSize: "3rem",
         fontWeight: 700,
-        fontFamily: '"Pragati Narrow", sans-serif',
         textTransform: "capitalize",
       },
       h3: {
@@ -48,6 +48,7 @@ export const getTheme = (mode: "dark" | "light") => {
       },
       h4: {
         fontSize: "2rem",
+        fontWeight:700
       },
       h5: {
         fontSize: "1.5rem",

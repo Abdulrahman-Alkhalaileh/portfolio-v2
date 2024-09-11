@@ -1,11 +1,11 @@
-import Projects from "./components/Projects";
-import MUIThemeProvider from "./components/Providers/MUIThemeProvider";
+import MUIThemeProvider from "./components/theme/MUIThemeProvider";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
       <MUIThemeProvider>
-        <Projects />
+        <Home />
       </MUIThemeProvider>
     </div>
   );

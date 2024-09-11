@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material";
-import { getTheme } from "../../configs/theme";
+import { getTheme } from "./theme";
 import { ThemeProviderProps } from "@mui/material/styles/ThemeProvider";
 
 export interface MUIThemeProviderProps extends Partial<ThemeProviderProps> {}

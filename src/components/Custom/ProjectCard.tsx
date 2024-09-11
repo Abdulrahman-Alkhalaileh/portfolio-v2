@@ -6,15 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Box, Button, CardActions, Chip, Divider, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ProjectModal from "../Modals/ProjectModal";
-
-export interface ProjectType {
-  title: string;
-  description: string;
-  url: string;
-  imageUrl: string;
-  repo: string;
-  technologies: string[];
-}
+import { ProjectType } from "../../helpers/types";
 
 export interface ProjectCardProps extends CardProps {
   data: ProjectType;
@@ -49,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         <Stack gap={{ xs: 1, md: 3 }}>
           <Typography
             variant="h1"
-            fontSize={{ xs:"1.5rem",sm: "2.5rem", lg: "4.5rem" }}
+            fontSize={{ xs:"2rem",sm: "3.5rem", lg: "4.5rem" }}
             fontWeight={700}
           >
             {data.title}

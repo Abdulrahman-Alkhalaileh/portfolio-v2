@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeContext } from "../Providers/MUIThemeProvider";
+import { ThemeContext } from "../theme/MUIThemeProvider";
 import { Switch } from "@mui/material";
 
 export interface ThemeSwitchProps {}
