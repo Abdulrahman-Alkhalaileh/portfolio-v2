@@ -5,11 +5,14 @@ export const getTheme = (mode: "dark" | "light") => {
     palette: {
       mode: mode,
       primary: {
-        main: mode === "light" ? "#0052cc" : "#032d88",
+        main: mode === "light" ? "#0c5dcc" : "#0c5dcc",
       },
       secondary: {
         main: mode === "light" ? "#edf2ff" : "#2e323d",
       },
+      background:{
+        paper: mode === "light" ? "#ffffffc9" : "#13193ad9"
+      }
     },
     breakpoints: {
       values: {
@@ -62,6 +65,7 @@ export const getTheme = (mode: "dark" | "light") => {
         styleOverrides: {
           root: {
             textTransform: "capitalize",
+            fontSize: 20
           },
         },
       },

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../configs/firebase"; // Import the Firestore instance
-import Slider from "./Custom/Slider/Slider";
+import Slider from "./Slider/Slider";
 import ProjectCard from "./Custom/ProjectCard";
 import ThemeSwitch from "./Custom/ThemeSwitch";
 
@@ -20,7 +20,7 @@ const Projects = () => {
 
   return (
     <>
-    <ThemeSwitch/>
+      <ThemeSwitch />
       <Slider
         count={projects.length}
         currentIndex={currentIndex}
@@ -29,7 +29,7 @@ const Projects = () => {
         {projects.map(
           (project: any, index: any) =>
             currentIndex === index && (
-              <ProjectCard key={project.id} {...project} />
+              <ProjectCard key={crypto.randomUUID()} data={project} />
             )
         )}
       </Slider>

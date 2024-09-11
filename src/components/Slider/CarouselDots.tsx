@@ -8,10 +8,11 @@ export interface CarouselDotsProps extends BoxProps {
 }
 
 const circleStyle: SxProps = {
-  width: "15px",
-  height: "15px",
-  borderRadius: "50%",
+  width: { xs: "10px", md: "15px" },
+  height: { xs: "10px", md: "15px" },
+  borderRadius: "100%",
   cursor: "pointer",
+  transition: "all ease 0.3s",
 };
 
 const CarouselDots: React.FC<CarouselDotsProps> = ({
@@ -21,18 +22,19 @@ const CarouselDots: React.FC<CarouselDotsProps> = ({
   ...props
 }) => {
   return (
-    <div style={{ display: "flex", gap: 15 }}>
+    <Box display="flex" gap={1}>
       {Array(count)
         .fill(0)
         .map((item, index) => (
           <Box
+            key={crypto.randomUUID()}
             {...props}
             sx={{ ...circleStyle, ...props.sx }}
             bgcolor={activeStep === index ? "primary.main" : "secondary.main"}
             onClick={() => setActiveStep(index)}
           ></Box>
         ))}
-    </div>
+    </Box>
   );
 };
 
