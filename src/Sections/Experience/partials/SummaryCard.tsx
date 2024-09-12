@@ -4,7 +4,7 @@ import { ExperienceType } from "helpers/types";
 import H4 from "components/Typography/H4";
 import H1 from "components/Typography/H1";
 import P1 from "components/Typography/P1";
-import TextAnimation from "components/Typography/TextAnimation";
+import TextAnimation from "components/Animations/TextAnimation";
 
 export interface SummaryCardProps extends PaperProps {
   data: ExperienceType[];
@@ -18,7 +18,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
       {data.map(
         (item, i) =>
           index === i && (
-            <Stack spacing={1} pt={2}>
+            <Stack spacing={1} pt={2} key={crypto.randomUUID()}>
               <TextAnimation>
               <H1 color="primary" sx={{textShadow: 'none'}}>{item.institution}</H1>
               </TextAnimation>
@@ -33,13 +33,13 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
                 </Typography>
               </TextAnimation>
               <Stack direction="row" gap={5} pb={2}>
-                <Stack direction={{xs:'column',sm:"row"}} spacing={2} alignItems="center">
+                <Stack direction={{xs:'column',sm:"row"}} spacing={{sm:2}} alignItems={{sm:"center"}}>
                   <Typography variant="body1" fontWeight={700}>
                     Type:
                   </Typography>
                   <Typography variant="body1"> {item.type}</Typography>
                 </Stack>
-                <Stack direction={{xs:'column',sm:"row"}} spacing={2} alignItems="center">
+                <Stack direction={{xs:'column',sm:"row"}} spacing={{sm:2}} alignItems={{sm:"center"}}>
                   <Typography variant="body1" fontWeight={700}>
                     Location:
                   </Typography>

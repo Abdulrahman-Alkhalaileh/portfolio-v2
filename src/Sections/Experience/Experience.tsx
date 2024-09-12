@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BoxProps, Divider, Stack } from "@mui/material";
+import { BoxProps, Stack } from "@mui/material";
 import AnimatedStack from "components/Slider/Stack3D/AnimatedStack";
 import ViewInfo from "./partials/ExperienceInfo";
 import SummaryCard from "./partials/SummaryCard";
 import { fetchData } from "helpers/fetchData";
 import { ExperienceType } from "helpers/types";
+import PageTransition from "components/Animations/PageTransition";
 
 export interface ExperienceProps extends BoxProps {}
 
@@ -19,16 +20,8 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
   }, []);
 
   return (
-    <Stack spacing={1}>
-      <Stack
-        direction={{ xs: "column-reverse", md: "row" }}
-        gap={{ xs: 5, md: 3 }}
-      >
-        <SummaryCard
-          data={experience}
-          index={index}
-          sx={{ height: { xs: "fit-content", lg: 480 }, flex: 1 }}
-        />
+    <PageTransition>
+      <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 5, md: 3 }}>
         <AnimatedStack
           index={index}
           setIndex={setIndex}
@@ -42,9 +35,13 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
               )
           )}
         </AnimatedStack>
+        <SummaryCard
+          data={experience}
+          index={index}
+          sx={{ height: { xs: "fit-content", lg: 480 }, flex: 1 }}
+        />
       </Stack>
-      <Divider />
-    </Stack>
+    </PageTransition>
   );
 };
 

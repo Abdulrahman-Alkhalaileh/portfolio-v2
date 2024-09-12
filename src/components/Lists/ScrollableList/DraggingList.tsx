@@ -1,6 +1,6 @@
 import { Box, Paper, useTheme } from "@mui/material";
+import H4 from "components/Typography/H4";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import H4 from "../../Typography/H4";
 
 const height = 70;
 const padding = 10;
@@ -31,7 +31,7 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
             width,
             height: 6,
             borderRadius: 3,
-            backgroundColor: theme.palette.primary.main, // Updated color for visibility
+            backgroundColor: theme.palette.primary.main,
           }}
         />
       </Box>

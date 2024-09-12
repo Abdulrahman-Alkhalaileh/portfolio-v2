@@ -1,9 +1,10 @@
 import { Stack, StackProps, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import DraggingList from "components/Lists/ScrollableList/DraggingList";
 import H2 from "components/Typography/H2";
 import { SkillsType } from "helpers/types";
 import { fetchData } from "helpers/fetchData";
+import PageTransition from "components/Animations/PageTransition";
+import DraggingList from "components/Lists/ScrollableList/DraggingList";
 
 export interface SkillsProps extends StackProps {}
 
@@ -15,7 +16,7 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
   }, []);
 
   return (
-    <>
+    <PageTransition>
       {skills && (
         <Stack
           direction={{ xs: "column", md: "row" }}
@@ -56,7 +57,7 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
           </Stack>
         </Stack>
       )}
-    </>
+    </PageTransition>
   );
 };
 

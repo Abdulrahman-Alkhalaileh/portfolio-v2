@@ -4,10 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Box, Button, CardActions, Chip, Divider, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import ProjectModal from "../Modals/ProjectModal";
-import { ProjectType } from "../../helpers/types";
-import H4 from "../Typography/H4";
-import H1 from "../Typography/H1";
+import H1 from "components/Typography/H1";
+import H4 from "components/Typography/H4";
+import ProjectModal from "Sections/Projects/partials/ProjectModal";
+import { ProjectType } from "helpers/types";
 
 export interface ProjectCardProps extends CardProps {
   data: ProjectType;
@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         </Stack>
         <Divider />
         <CardActions
-          sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+          sx={{ display: "flex", justifyContent: "center" }}
         >
           <a href={data.repo} target="__blank">
             <GitHubIcon fontSize="large" />
@@ -86,6 +86,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
           objectFit: "fill",
           width: { xs: "100%", md: "50%" },
           filter: "blur(3px)",
+          m:{sm:0,md:2},
+          borderRadius: {md:'0 20px 20px 0'},
+          border:2
         }}
         image={data.imageUrl}
         alt={data.title}

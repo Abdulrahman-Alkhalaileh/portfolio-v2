@@ -57,7 +57,7 @@ const Slider: React.FC<SliderProps> = ({
           key={currentIndex} // Key ensures re-render for each slide
           initial={{ x: direction.current === 1 ? 300 : -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut",stiffness:10 }}
           exit={{ x: direction.current === 1 ? -300 : 300, opacity: 0 }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}

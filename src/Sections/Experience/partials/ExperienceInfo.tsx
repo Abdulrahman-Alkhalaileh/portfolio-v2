@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import { HighlightPhrases } from "../../../../../utils/highlightText";
+import { HighlightPhrases } from "utils/highlightText";
 
 export interface ViewInfoProps {
   info: string[];

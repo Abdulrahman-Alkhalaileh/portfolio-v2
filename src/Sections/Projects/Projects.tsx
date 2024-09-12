@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Slider from "components/Slider/Slider";
-import ProjectCard from "components/Custom/ProjectCard";
-import { Box } from "@mui/material";
 import { fetchData } from "helpers/fetchData";
 import { ProjectType } from "helpers/types";
+import PageTransition from "components/Animations/PageTransition";
+import ProjectCard from "./partials/ProjectCard";
 
 const Projects = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -14,7 +14,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Box>
+    <PageTransition>
       <Slider
         count={projects.length}
         currentIndex={currentIndex}
@@ -27,7 +27,7 @@ const Projects = () => {
             )
         )}
       </Slider>
-    </Box>
+    </PageTransition>
   );
 };
 
