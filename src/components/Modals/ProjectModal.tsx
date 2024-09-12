@@ -71,7 +71,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </Stack>
             <Stack gap={2}>
               <Divider variant="fullWidth" />
-              <Typography variant="h4" fontWeight={600} color="#3d91ff">
+              <Typography variant="h4" fontWeight={600} color="primary">
                 Technologies:
               </Typography>
               <Box display="flex" gap={1} flexWrap="wrap">
