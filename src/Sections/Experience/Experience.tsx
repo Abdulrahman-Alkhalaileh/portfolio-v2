@@ -21,7 +21,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
 
   return (
     <PageTransition>
-      <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 5, md: 3 }}>
+      <Stack direction={{ xs: "column", md: "row" }} gap={5}>
         <AnimatedStack
           index={index}
           setIndex={setIndex}
@@ -38,7 +38,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
         <SummaryCard
           data={experience}
           index={index}
-          sx={{ height: { xs: "fit-content", lg: 480 }, flex: 1 }}
+          sx={{ minHeight: { xs: "fit-content", lg: 450 }, flex: 1 }}
         />
       </Stack>
     </PageTransition>

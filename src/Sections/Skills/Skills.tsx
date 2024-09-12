@@ -4,7 +4,7 @@ import H2 from "components/Typography/H2";
 import { SkillsType } from "helpers/types";
 import { fetchData } from "helpers/fetchData";
 import PageTransition from "components/Animations/PageTransition";
-import DraggingList from "components/Lists/ScrollableList/DraggingList";
+import DraggingList from "components/Lists/DraggingList";
 
 export interface SkillsProps extends StackProps {}
 

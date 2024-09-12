@@ -2,9 +2,9 @@ import React from "react";
 import { Divider, Paper, PaperProps, Stack, Typography } from "@mui/material";
 import { ExperienceType } from "helpers/types";
 import H4 from "components/Typography/H4";
-import H1 from "components/Typography/H1";
 import P1 from "components/Typography/P1";
 import TextAnimation from "components/Animations/TextAnimation";
+import H2 from "components/Typography/H2";
 
 export interface SummaryCardProps extends PaperProps {
   data: ExperienceType[];
@@ -20,7 +20,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
           index === i && (
             <Stack spacing={1} pt={2} key={crypto.randomUUID()}>
               <TextAnimation>
-              <H1 color="primary" sx={{textShadow: 'none'}}>{item.institution}</H1>
+              <H2 color="primary" sx={{textShadow: 'none'}}>{item.institution}</H2>
               </TextAnimation>
                 <Divider />
               <TextAnimation>

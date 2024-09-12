@@ -10,8 +10,8 @@ const Header: React.FC<HeaderProps> = ({ ...props }) => {
 
   return (
     <Stack alignItems='center' spacing={1} py={2}>
-      <ThemeList/>
       <SectionsList/>
+      <ThemeList/>
     </Stack>
   );
 };
