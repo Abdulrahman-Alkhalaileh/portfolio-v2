@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { sections } from "configs/sectionItems";
 import { useLocation } from "react-router-dom";
 import AnimatedTabs from "components/Animations/AnimatedTabs";
+import { BoxProps } from "@mui/material";
 
-export interface SectionsListProps {}
+export interface SectionsListProps extends BoxProps{
+  layoutId?: string;
+}
 
-const SectionsList: React.FC<SectionsListProps> = () => {
+const SectionsList: React.FC<SectionsListProps> = ({ layoutId,...props }) => {
   const [selected, setSelected] = useState(0);
   const path = useLocation();
 
@@ -26,7 +29,8 @@ const SectionsList: React.FC<SectionsListProps> = () => {
         selected={selected}
         handleChange={handleChangeSection}
         items={sections}
-        layoutId="sectionsLayout"
+        layoutId={layoutId || "sectionsLayout"}
+        {...props}
       />
     </>
   );

@@ -42,7 +42,11 @@ const Slider: React.FC<SliderProps> = ({
         onClick={handlePrev}
         sx={{ display: { xs: "none", sm: "block" } }}
       >
-        <ArrowBackIosIcon fontSize="large" sx={{ width: { xs: 25, md: 35 } }} />
+        <ArrowBackIosIcon
+          fontSize="large"
+          color="primary"
+          sx={{ width: { xs: 25, md: 35 } }}
+        />
       </IconButton>
       <Box
         display="flex"
@@ -57,7 +61,7 @@ const Slider: React.FC<SliderProps> = ({
           key={currentIndex} // Key ensures re-render for each slide
           initial={{ x: direction.current === 1 ? 300 : -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut",stiffness:10 }}
+          transition={{ duration: 0.3, ease: "easeOut", stiffness: 10 }}
           exit={{ x: direction.current === 1 ? -300 : 300, opacity: 0 }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -67,11 +71,16 @@ const Slider: React.FC<SliderProps> = ({
             else handleNext();
           }}
           whileTap={{ cursor: "grabbing" }}
-          style={{ display: "flex", gap: "2.5rem",width:'100%', justifyContent:'center' }}
+          style={{
+            display: "flex",
+            gap: "2.5rem",
+            width: "100%",
+            justifyContent: "center",
+          }}
         >
           {children}
         </motion.div>
-        <Stack direction='row' justifyContent='center'>
+        <Stack direction="row" justifyContent="center">
           <CarouselDots
             count={count}
             activeStep={currentIndex}
@@ -86,6 +95,7 @@ const Slider: React.FC<SliderProps> = ({
       >
         <ArrowForwardIosIcon
           fontSize="large"
+          color="primary"
           sx={{ width: { xs: 25, md: 35 } }}
         />
       </IconButton>

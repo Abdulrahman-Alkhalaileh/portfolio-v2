@@ -32,7 +32,7 @@ const ThemeList: React.FC<ThemeListProps> = () => {
         handleChange={handleChangeSection}
         items={themesList}
         layoutId="themeLayout"
-        sx={{ p: 0.5, bgcolor: "background.default" }}
+        sx={{ p: 1, bgcolor: "background.default",flexWrap:'wrap',width:280,borderRadius:3 }}
       />
     </>
   );

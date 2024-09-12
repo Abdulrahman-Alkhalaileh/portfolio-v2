@@ -10,7 +10,16 @@ function App() {
       <MUIThemeProvider>
         <BrowserRouter>
           <Header />
-          <Box pt={2} px={{xs:1,sm:3,md:5,lg:7,xl:9}} >
+          <Box
+            px={{ xs: 1, sm: 3, md: 5, lg: 7, xl: 9 }}
+            pt='120px'
+            pb='16px'
+            minHeight="calc(100vh - 136px)"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box height={120} />
             <Routes>
               {sections.map((section) => (
                 <Route

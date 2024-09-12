@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import CustomModal from "../../../components/Modals/CustomModal";
+import CustomModal from "../../../components/Popups/CustomModal";
 import { ProjectType } from "helpers/types";
 import H1 from "components/Typography/H1";
 import P1 from "components/Typography/P1";
