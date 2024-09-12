@@ -23,9 +23,18 @@ const ViewInfo: React.FC<ViewInfoProps> = ({ info, ...props }) => {
             variant={"h4"}
             fontSize={
               j % 2 === 0
-                ? { xs: "1rem", sm: "1.5rem", lg: "2rem" }
-                : { xs: "2.5rem", sm: "3.5rem", lg: "4.5rem" }
+                ? {
+                    xs: "1rem",
+                    sm: "1.2rem",
+                    xl: "2rem",
+                  }
+                : {
+                    xs: "2.5rem",
+                    sm: "3.2rem",
+                    xl: "4.5rem",
+                  }
             }
+            whiteSpace={j % 2 === 0 ? "nowrap" : "wrap"}
             dangerouslySetInnerHTML={{ __html: HighlightPhrases(text) }}
           ></Typography>
         </motion.div>
