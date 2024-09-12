@@ -59,7 +59,8 @@ const Card: React.FC<CardProps> = ({
         minWidth: 200,
         minHeight: 350,
         position: "absolute",
-        top: 0,
+        width: '100%',
+        top: 30,
         x,
         rotate,
         cursor: "grab",
@@ -85,11 +86,13 @@ const Card: React.FC<CardProps> = ({
       <motion.div
         style={{
           scale,
+          width: '100%',
         }}
       >
         <Paper
           sx={{
             minWidth: 200,
+            width:'100%',
             minHeight: {xs: 200 ,lg:350},
             borderRadius: 5,
             p: {xs:2,sm:4,md:5},
@@ -98,6 +101,7 @@ const Card: React.FC<CardProps> = ({
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            boxSizing: 'border-box'
           }}
         >
           {children}

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Card, { CardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { Box, Button, CardActions, Chip, Divider, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ProjectModal from "../Modals/ProjectModal";
 import { ProjectType } from "../../helpers/types";
+import H4 from "../Typography/H4";
+import H1 from "../Typography/H1";
 
 export interface ProjectCardProps extends CardProps {
   data: ProjectType;
@@ -18,12 +19,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
   return (
     <Card
       sx={{
-        width: { xs: 230,sm:500, md: 800, lg: 1000, xl: 1200 },
+        width: { xs: 230, sm: 500, md: 800, lg: 1000, xl: 1200 },
         display: "flex",
         flexDirection: { xs: "column-reverse", md: "row" },
         justifyContent: "space-between",
         gap: 1,
-        transition: 'all ease 0.5s',
+        transition: "all ease 0.5s",
         borderRadius: 5,
       }}
     >
@@ -39,34 +40,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         }}
       >
         <Stack gap={{ xs: 1, md: 3 }}>
-          <Typography
-            variant="h1"
-            fontSize={{ xs:"2rem",sm: "3.5rem", lg: "4.5rem" }}
-            fontWeight={700}
-          >
-            {data.title}
-          </Typography>
+          <H1 textAlign='center'>{data.title}</H1>
         </Stack>
         <Stack gap={2} display={{ xs: "none", md: "flex" }}>
           <Divider />
-          <Typography
-            variant="h4"
-            fontWeight={600}
-            fontSize={{ xs: "1.5rem",md:'1.8rem', lg: "2rem" }}
-          >
-            Some Technologies:
-          </Typography>
+          <H4>Some Technologies:</H4>
           <Box display="flex" gap={1} flexWrap="wrap">
             {data.technologies.slice(0, 3).map((item) => (
               <Chip
                 key={crypto.randomUUID()}
                 label={item}
-                sx={{ fontSize: { xs: 14,md:17, lg: 22 },py:2.3 }}
+                sx={{ fontSize: { xs: 14, md: 17, lg: 22 }, py: 2.3 }}
               />
             ))}
           </Box>
         </Stack>
-          <Divider />
+        <Divider />
         <CardActions sx={{ display: "flex", justifyContent: "center" }}>
           <a href={data.repo} target="__blank">
             <GitHubIcon fontSize="large" />
@@ -75,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
             variant="contained"
             color="primary"
             onClick={() => setOpenModal(true)}
-            sx={{ flex: 1,fontSize: {xs:14,md:20} }}
+            sx={{ flex: 1, fontSize: { xs: 14, md: 20 } }}
           >
             View More
           </Button>

@@ -15,6 +15,8 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { ProjectType } from "../../helpers/types";
+import H1 from "../Typography/H1";
+import P1 from "../Typography/P1";
 
 export interface ProjectModalProps extends DialogProps {
   title: string;
@@ -40,7 +42,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       >
         <Stack direction="row" justifyContent="end" px={1}>
           <IconButton onClick={handleClose} disableRipple>
-            <CloseIcon fontSize="large"/>
+            <CloseIcon fontSize="large" />
           </IconButton>
         </Stack>
         <Divider />
@@ -63,23 +65,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             }}
           >
             <Stack gap={3}>
-              <Typography
-                variant="h1"
-                fontSize={{ xs: "2.5rem", md: "4.5rem" }}
-                fontWeight={700}
-              >
-                {data.title}
-              </Typography>
+              <H1>{data.title}</H1>
               <Divider />
-              <Typography
-                variant="body1"
-                fontSize={20}
-                fontWeight={600}
-                color="text.secondary"
-                gutterBottom
-              >
-                {data.description}
-              </Typography>
+              <P1 gutterBottom>{data.description}</P1>
             </Stack>
             <Stack gap={2}>
               <Divider variant="fullWidth" />

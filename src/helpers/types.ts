@@ -1,6 +1,10 @@
 export interface ExperienceType {
-  id: string;
   info: string[];
+  description: string;
+  date: string;
+  institution: string;
+  location: string;
+  type: string;
 }
 
 export interface ProjectType {
@@ -11,4 +15,9 @@ export interface ProjectType {
   imageUrl: string;
   repo: string;
   technologies: string[];
+}
+
+export interface SkillsType {
+  personal: string[];
+  technical: string[];
 }

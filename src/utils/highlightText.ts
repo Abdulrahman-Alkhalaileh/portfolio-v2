@@ -13,6 +13,7 @@ export function HighlightPhrases(text: string) {
     "welab",
     "reactJS",
     "nextJS",
+    "hashemite",
   ];
 
   // Create a regex that will match any of the phrases, case-insensitive

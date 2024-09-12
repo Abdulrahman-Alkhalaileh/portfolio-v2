@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Card from "./AnimatedCard";
 import { Box } from "@mui/material";
+import ProgressBar from "./ProgressBar";
 
 export interface AnimatedStackProps extends HTMLAttributes<HTMLDivElement> {
   index: number;
@@ -21,11 +22,10 @@ const AnimatedStack: React.FC<AnimatedStackProps> = ({
       style={{
         minHeight: 350,
         position: "relative",
-        display: "flex",
-        justifyContent: "center",
         ...props.style,
       }}
     >
+      <ProgressBar index={index} count={count + 1} />
       <AnimatePresence initial={false}>
         <Card
           key={index + 1}

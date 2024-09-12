@@ -22,8 +22,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <Box
       mb={3}
-      p={0.3}
-      height={15}
+      p={0.2}
+      height={10}
+      marginX='auto'
       border={2}
       borderColor={theme.palette.divider}
       borderRadius={5}
