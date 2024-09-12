@@ -1,10 +1,10 @@
 import React from "react";
 import { Divider, Paper, PaperProps, Stack, Typography } from "@mui/material";
-import { ExperienceType } from "../../../../../helpers/types";
-import H4 from "../../../../../components/Typography/H4";
-import H1 from "../../../../../components/Typography/H1";
-import P1 from "../../../../../components/Typography/P1";
-import TextAnimation from "../../../../../components/Typography/TextAnimation";
+import { ExperienceType } from "helpers/types";
+import H4 from "components/Typography/H4";
+import H1 from "components/Typography/H1";
+import P1 from "components/Typography/P1";
+import TextAnimation from "components/Typography/TextAnimation";
 
 export interface SummaryCardProps extends PaperProps {
   data: ExperienceType[];
@@ -14,15 +14,15 @@ export interface SummaryCardProps extends PaperProps {
 const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
   return (
     <Paper {...props} sx={{ borderRadius: 5, p: 3, ...props.sx }}>
-      <H1>Journey :</H1>
-      <Divider />
+      <H4>My journey at:</H4>
       {data.map(
         (item, i) =>
           index === i && (
             <Stack spacing={1} pt={2}>
               <TextAnimation>
-                <H4 color="primary">{item.institution}</H4>
+              <H1 color="primary" sx={{textShadow: 'none'}}>{item.institution}</H1>
               </TextAnimation>
+                <Divider />
               <TextAnimation>
                 <Typography
                   variant="body1"
@@ -32,15 +32,14 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
                   {item.date}
                 </Typography>
               </TextAnimation>
-              <Divider />
               <Stack direction="row" gap={5} pb={2}>
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction={{xs:'column',sm:"row"}} spacing={2} alignItems="center">
                   <Typography variant="body1" fontWeight={700}>
                     Type:
                   </Typography>
                   <Typography variant="body1"> {item.type}</Typography>
                 </Stack>
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction={{xs:'column',sm:"row"}} spacing={2} alignItems="center">
                   <Typography variant="body1" fontWeight={700}>
                     Location:
                   </Typography>

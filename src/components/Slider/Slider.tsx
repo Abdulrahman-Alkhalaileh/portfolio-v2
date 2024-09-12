@@ -2,7 +2,7 @@ import React from "react";
 import CarouselDots from "./CarouselDots";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Box, BoxProps, IconButton } from "@mui/material";
+import { Box, BoxProps, IconButton, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
 export interface SliderProps extends BoxProps {
@@ -32,14 +32,22 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-around" {...props}>
-      <IconButton onClick={handlePrev}>
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="space-around"
+      {...props}
+    >
+      <IconButton
+        onClick={handlePrev}
+        sx={{ display: { xs: "none", sm: "block" } }}
+      >
         <ArrowBackIosIcon fontSize="large" sx={{ width: { xs: 25, md: 35 } }} />
       </IconButton>
       <Box
         display="flex"
         flexDirection="column"
-        alignItems="center"
+        alignItems="stretch"
         gap={2.5}
         position="relative"
         overflow="hidden"
@@ -59,19 +67,23 @@ const Slider: React.FC<SliderProps> = ({
             else handleNext();
           }}
           whileTap={{ cursor: "grabbing" }}
-          style={{ display: "flex", gap: "2.5rem" }}
+          style={{ display: "flex", gap: "2.5rem",width:'100%', justifyContent:'center' }}
         >
           {children}
         </motion.div>
-
-        <CarouselDots
-          count={count}
-          activeStep={currentIndex}
-          setActiveStep={setCurrentIndex}
-        />
+        <Stack direction='row' justifyContent='center'>
+          <CarouselDots
+            count={count}
+            activeStep={currentIndex}
+            setActiveStep={setCurrentIndex}
+          />
+        </Stack>
       </Box>
 
-      <IconButton onClick={handleNext}>
+      <IconButton
+        onClick={handleNext}
+        sx={{ display: { xs: "none", sm: "block" } }}
+      >
         <ArrowForwardIosIcon
           fontSize="large"
           sx={{ width: { xs: 25, md: 35 } }}

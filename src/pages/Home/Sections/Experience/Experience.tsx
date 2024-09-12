@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BoxProps, Divider, Stack } from "@mui/material";
-import AnimatedStack from "../../../../components/Slider/Stack3D/AnimatedStack";
+import AnimatedStack from "components/Slider/Stack3D/AnimatedStack";
 import ViewInfo from "./partials/ExperienceInfo";
-import { fetchData } from "../../../../helpers/fetchData";
-import { ExperienceType } from "../../../../helpers/types";
 import SummaryCard from "./partials/SummaryCard";
+import { fetchData } from "helpers/fetchData";
+import { ExperienceType } from "helpers/types";
 
 export interface ExperienceProps extends BoxProps {}
 

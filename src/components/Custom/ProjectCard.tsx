@@ -19,13 +19,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
   return (
     <Card
       sx={{
-        width: { xs: 230, sm: 500, md: 800, lg: 1000, xl: 1200 },
+        width: { sm: 500, md: 800, lg: 1000, xl: 1200 },
         display: "flex",
         flexDirection: { xs: "column-reverse", md: "row" },
         justifyContent: "space-between",
         gap: 1,
         transition: "all ease 0.5s",
         borderRadius: 5,
+        flexGrow: { xs: 1, sm: 0 },
       }}
     >
       <CardContent
@@ -40,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         }}
       >
         <Stack gap={{ xs: 1, md: 3 }}>
-          <H1 textAlign='center'>{data.title}</H1>
+          <H1 textAlign="center">{data.title}</H1>
         </Stack>
         <Stack gap={2} display={{ xs: "none", md: "flex" }}>
           <Divider />
@@ -56,7 +57,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
           </Box>
         </Stack>
         <Divider />
-        <CardActions sx={{ display: "flex", justifyContent: "center" }}>
+        <CardActions
+          sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+        >
           <a href={data.repo} target="__blank">
             <GitHubIcon fontSize="large" />
           </a>
