@@ -7,6 +7,7 @@ const twilightPalette: PaletteOptions = {
   mode: "dark",
   primary: {
     main: "#e6b03c",
+    dark: "#38345b"
   },
   secondary: {
     main: "#e06d56",
@@ -24,6 +25,7 @@ const olivePalette: PaletteOptions = {
   mode: "light",
   primary: {
     main: "#4d4e46",
+    dark: "#42433c"
   },
   secondary: {
     main: "#c2b8aa",
@@ -41,6 +43,7 @@ const lightPalette: PaletteOptions = {
   mode: "light",
   primary: {
     main: "#0c5dcc",
+    dark: "#304767"
   },
   secondary: {
     main: "#edf2ff",
@@ -58,6 +61,7 @@ const darkPalette: PaletteOptions = {
   mode: "dark",
   primary: {
     main: "#0c5dcc",
+    dark: "#090a21"
   },
   secondary: {
     main: "#2e323d",
@@ -72,6 +76,7 @@ const redPalette: PaletteOptions = {
   mode: "dark",
   primary: {
     main: "#cc0c0c",
+    dark: "#250909"
   },
   secondary: {
     main: "#3d2e2e",

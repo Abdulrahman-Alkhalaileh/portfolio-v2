@@ -48,7 +48,7 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
       >
         <motion.div
           style={{
-            width: 300,
+            // width: 300,
             height: getHeight(data),
             y: scrollY,
           }}
@@ -58,12 +58,13 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
             bottom: 0,
           }}
         >
+          <Box width={{xs:300,xl:400}}>
           {data.map((item, index) => {
             return (
                 <Paper
                   key={index}
                   sx={{
-                    width: 300,
+                    width: {xs:300,xl:400},
                     height: height,
                     borderRadius: 5,
                     position: "absolute",
@@ -77,6 +78,7 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
                 </Paper>
             );
           })}
+          </Box>
         </motion.div>
       </motion.div>
     </>

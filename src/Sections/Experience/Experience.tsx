@@ -38,7 +38,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
         <SummaryCard
           data={experience}
           index={index}
-          sx={{ minHeight: { xs: "fit-content", lg: 450 }, flex: 1 }}
+          sx={{ minHeight: { xs: "fit-content", lg: 400 }, flex: 1 }}
         />
       </Stack>
     </PageTransition>

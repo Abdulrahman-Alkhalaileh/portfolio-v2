@@ -47,14 +47,10 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ index, data, ...props }) => {
                 </Stack>
               </Stack>
               <Divider />
-              <Stack spacing={1} pt={1}>
-                <Typography
-                  variant="body1"
-                  fontSize={{ xl: 22 }}
-                  fontWeight={900}
-                >
+              <Stack spacing={1}>
+                <H4>
                   Description:
-                </Typography>
+                </H4>
                 <TextAnimation>
                   <P1 key={crypto.randomUUID()}>{item.description}</P1>
                 </TextAnimation>

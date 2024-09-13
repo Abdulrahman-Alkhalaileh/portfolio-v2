@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import { Stack } from "@mui/material";
+import { Stack, StackProps } from "@mui/material";
 import SectionsList from "components/Lists/SectionsList";
 import ThemeMenu from "./ThemeMenu";
 import SectionsMenu from "./SectionsMenu";
+import Logo from "./Logo";
 
-export interface HeaderProps {}
+export interface HeaderProps extends StackProps{}
 
 const Header: React.FC<HeaderProps> = ({ ...props }) => {
   return (
@@ -14,17 +15,20 @@ const Header: React.FC<HeaderProps> = ({ ...props }) => {
       alignItems="center"
       justifyContent="space-between"
       spacing={1}
-      px={{xs:2,md:12}}
-      position='fixed'
+      px={{ xs: 2, md: 12 }}
+      position="fixed"
       zIndex={1000}
-      boxSizing='border-box'
-      width='100%'
-      height={120}
+      boxSizing="border-box"
+      width="100%"
+      height={{xs:80,sm:100}}
+      bgcolor="background.paper"
+      border={1}
+      {...props}
     >
-      <Stack display={{ xs: "none", md: "block" }} />
       <SectionsMenu
         iconButtonProps={{ sx: { display: { xs: "flex", md: "none" } } }}
       />
+      <Logo />
       <SectionsList sx={{ display: { xs: "none", md: "flex" } }} />
       <ThemeMenu />
     </Stack>

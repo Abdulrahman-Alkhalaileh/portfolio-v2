@@ -8,7 +8,7 @@ const P1: React.FC<P1Props> = ({ children, ...props }) => {
   return (
     <Typography
       variant="body1"
-      fontSize={{ xs: 15, sm: 17, md: 18, xl: 20 }}
+      fontSize={{ xs: 15, sm: 17, md: 18, xl: 19 }}
       color="text.primary"
       fontWeight={500}
       {...props}

@@ -31,7 +31,7 @@ const ViewInfo: React.FC<ViewInfoProps> = ({ info, ...props }) => {
                 : {
                     xs: "2.5rem",
                     sm: "3.2rem",
-                    xl: "4.5rem",
+                    xl: "4rem",
                   }
             }
             whiteSpace={j % 2 === 0 ? "nowrap" : "wrap"}
