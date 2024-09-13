@@ -1,6 +1,6 @@
+import React from "react";
 import { Stack, StackProps } from "@mui/material";
 import LogoSVG, { LogoSVGProps } from "components/SVG/LogoSVG";
-import React from "react";
 import { Link } from "react-router-dom";
 
 export interface LogoProps extends StackProps {
@@ -12,14 +12,14 @@ const Logo: React.FC<LogoProps> = ({ ...props }) => {
     <Link to="/">
       <Stack
         bgcolor="secondary.main"
-        width={70}
-        height={70}
+        width={{ xs: 50, sm: 70 }}
+        height={{ xs: 50, sm: 70 }}
         borderRadius="50%"
-        border={7}
+        border={{ xs: 4, sm: 7 }}
         borderColor="primary.dark"
         {...props}
       >
-        <LogoSVG width={70} height={70} {...props.logoProps} />
+        <LogoSVG className="logo" {...props.logoProps} />
       </Stack>
     </Link>
   );

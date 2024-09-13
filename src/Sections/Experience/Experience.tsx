@@ -21,12 +21,12 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
 
   return (
     <PageTransition>
-      <Stack direction={{ xs: "column", md: "row" }} gap={5}>
+      <Stack direction={{ xs: "column", md: "row" }} gap={{xs:2,md:5}}>
         <AnimatedStack
           index={index}
           setIndex={setIndex}
           count={experience.length - 1}
-          style={{ flex: 1, width: "100%" }}
+          style={{ flex: 1, width: "100%",overflow:'hidden' }}
         >
           {experience.map(
             (item, i: number) =>

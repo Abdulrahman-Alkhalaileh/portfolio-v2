@@ -18,7 +18,7 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
     <>
       <Header/>
       <Box
-        px={{ xs: 1, sm: 3, md: 5, lg: 7, xl: 9 }}
+        px={{ xs: 3, md: 5, lg: 7, xl: 9 }}
         pt="100px"
         pb="16px"
         minHeight="calc(100vh - 116px)"
