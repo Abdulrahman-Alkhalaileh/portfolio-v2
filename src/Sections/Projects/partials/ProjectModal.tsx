@@ -79,11 +79,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </a>
           </Stack>
           <CardMedia
-            image={data.imageUrl}
-            sx={{ width: { xs: "100%", lg: 400 }, objectFit: "fill" }}
-            style={{
-              objectFit: "fill",
-              height: 400,
+            sx={{
+              width: { xs: "100%", lg: 400 },
+              height: { xs: 250, sm: 400 },
+              backgroundImage: `url(${data.imageUrl})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           />
         </Stack>

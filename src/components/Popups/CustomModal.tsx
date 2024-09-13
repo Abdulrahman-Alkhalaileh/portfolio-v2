@@ -32,9 +32,11 @@ const CustomModal: React.FC<CustomModalProps> = ({
           },
         }}
       >
-        <Stack direction="row" justifyContent="end" px={1}>
+        <Stack direction="row" justifyContent="end" px={{xs:0,md:1}}>
           <IconButton onClick={() => handleClose()} disableRipple>
-            <CloseIcon fontSize="large" />
+            <CloseIcon
+              sx={{ width: { xs: 25, md: 35 }, height: { xs: 25, md: 35 } }}
+            />
           </IconButton>
         </Stack>
         <Divider />
