@@ -25,6 +25,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
       <Stack
         direction={{ xs: "column", md: "row" }}
         gap={{ xs: 2, md: 5 }}
+        pt={{xs:1,sm:0}}
         position="relative"
       >
         <DraggableIndicator
@@ -32,7 +33,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
           sx={{
             position: "absolute",
             top: { xs: "-30px", md: "-50px" },
-            left: { xs: "calc(50% - 45.5px)", sm: "20px" },
+            left: { xs: "calc(50% - 55px)", sm: "20px" },
           }}
         />
         <AnimatedStack

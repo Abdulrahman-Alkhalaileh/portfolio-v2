@@ -11,8 +11,8 @@ export interface DraggableIndicatorProps {
 }
 
 const iconSize: SxProps = {
-  width: { xs: 25, sm: 30, md: 35 },
-  height: { xs: 25, sm: 30, md: 35 },
+  width: { xs: 30, md: 35 },
+  height: { xs: 30, md: 35 },
 };
 
 const DraggableIndicator: React.FC<DraggableIndicatorProps> = ({
@@ -34,6 +34,7 @@ const DraggableIndicator: React.FC<DraggableIndicatorProps> = ({
           justifyContent: "space-between",
           alignItems: "center",
           gap: 1,
+          color:'text.secondary',
           ...sx,
         }}
         animate={isHorizontal ? horizontal : vertical}
@@ -46,7 +47,7 @@ const DraggableIndicator: React.FC<DraggableIndicatorProps> = ({
       >
         <DoubleArrowIcon
           {...iconProps}
-          color="primary"
+          color="inherit"
           sx={{
             transform: isHorizontal ? "rotate(180deg)" : "rotate(270deg)",
             ...iconSize,
@@ -55,12 +56,12 @@ const DraggableIndicator: React.FC<DraggableIndicatorProps> = ({
         />
         <PanToolAltIcon
           {...iconProps}
-          color="primary"
+          color="inherit"
           sx={{ ...iconSize, ...iconProps?.sx }}
         />
         <DoubleArrowIcon
           {...iconProps}
-          color="primary"
+          color="inherit"
           sx={{
             transform: isHorizontal ? "none" : "rotate(90deg)",
             ...iconSize,

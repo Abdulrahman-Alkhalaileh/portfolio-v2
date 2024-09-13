@@ -58,13 +58,13 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
             bottom: 0,
           }}
         >
-          <Box width={{xs:300,xl:400}}>
+          <Box width={{xs:250,sm:300,xl:400}}>
           {data.map((item, index) => {
             return (
                 <Paper
                   key={index}
                   sx={{
-                    width: {xs:300,xl:400},
+                    width: {xs:250,sm:300,xl:400},
                     height: height,
                     borderRadius: 5,
                     position: "absolute",
