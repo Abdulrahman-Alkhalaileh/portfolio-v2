@@ -1,9 +1,10 @@
-import { Box, BoxProps, Divider } from "@mui/material";
 import React from "react";
+import { Box, BoxProps, Divider } from "@mui/material";
 import Header from "./Header";
 import H1 from "components/Typography/H1";
 import { useLocation } from "react-router-dom";
 import TextAnimation from "components/Animations/TextAnimation";
+import MobileNav from "./MobileNav";
 
 export interface NavigationWrapperProps extends BoxProps {}
 
@@ -20,8 +21,8 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
       <Box
         px={{ xs: 3, md: 5, lg: 7, xl: 9 }}
         pt="100px"
-        pb="16px"
-        minHeight="calc(100vh - 116px)"
+        pb={{ xs: "80px", md: "16px" }}
+        minHeight={{xs:'calc(100vh - 190px)',md:"calc(100vh - 116px)"}}
         display="flex"
         flexDirection="column"
         alignItems="center"
@@ -36,6 +37,7 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
           <Divider />
         </TextAnimation>
         {children}
+        <MobileNav />
       </Box>
     </>
   );
