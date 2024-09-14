@@ -83,8 +83,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               width: { xs: "100%", lg: 400 },
               height: { xs: 250, sm: 400 },
               backgroundImage: `url(${data.imageUrl})`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
+              border: 2,
+              borderRadius: 3,
+              bgcolor:'secondary.main'
             }}
           />
         </Stack>

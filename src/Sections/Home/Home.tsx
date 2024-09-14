@@ -10,6 +10,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
   return (
     <>
       <H1>Abdulrahman Alkhalaileh</H1>
+      <H1>Still In Progress...</H1>
       <DraggableElement direction='vertical' />
     </>
   )
