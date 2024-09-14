@@ -18,6 +18,6 @@ export interface ProjectType {
 }
 
 export interface SkillsType {
-  personal: string[];
-  technical: string[];
+  title: string;
+  imageUrl: string;
 }
