@@ -8,7 +8,7 @@ const H4: React.FC<H4Props> = ({ children, ...props }) => {
     <Typography
       variant="h4"
       fontWeight={600}
-      fontSize={{ xs: "1.5rem", sm: "1.8rem", lg: "2rem" }}
+      fontSize={{ xs: "1.3rem", sm: "1.8rem", lg: "2rem" }}
       color="text.primary"
       {...props}
     >
