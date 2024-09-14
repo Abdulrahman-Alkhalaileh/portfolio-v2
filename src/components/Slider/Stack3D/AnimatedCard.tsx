@@ -43,11 +43,11 @@ const Card: React.FC<CardProps> = ({
   };
 
   function handleDragEnd(_: any, info: any) {
-    if (info.offset.x < -100) {
+    if (info.offset.x < -50) {
       setExitX(-250);
       setIndex(index < count ? index + 1 : 0);
     }
-    if (info.offset.x > 100) {
+    if (info.offset.x > 50) {
       setExitX(250);
       setIndex(index < count ? index + 1 : 0);
     }
