@@ -1,5 +1,5 @@
-import H1 from "components/Typography/H1";
 import Experience from "Sections/Experience/Experience";
+import Home from "Sections/Home/Home";
 import Projects from "Sections/Projects/Projects";
 import Skills from "Sections/Skills/Skills";
 
@@ -14,7 +14,7 @@ export const sections: AnimatedItemType[] = [
   {
     index: 0,
     name: "home",
-    element: <H1 textAlign='center'>Abdulrahman Alkhalaileh</H1>,
+    element: <Home />,
     path: "/",
   },
   {
@@ -31,4 +31,3 @@ export const sections: AnimatedItemType[] = [
   },
   { index: 3, name: "projects", element: <Projects />, path: "/projects" },
 ];
-

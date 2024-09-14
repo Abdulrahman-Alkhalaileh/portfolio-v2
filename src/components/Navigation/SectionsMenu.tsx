@@ -11,11 +11,11 @@ const SectionsMenu: React.FC<SectionsMenuProps> = ({ ...props }) => {
       <CustomMenu
         icon={
           <MenuIcon
-            color="primary"
             sx={{
               p: 0.5,
               width: { xs: 25, sm: 35 },
               height: { xs: 25, sm: 35 },
+              color:'text.primary'
             }}
           />
         }

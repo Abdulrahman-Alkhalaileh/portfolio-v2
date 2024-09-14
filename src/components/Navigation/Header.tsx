@@ -22,7 +22,8 @@ const Header: React.FC<HeaderProps> = ({ ...props }) => {
       width="100%"
       height={{xs:80,sm:100}}
       bgcolor="background.paper"
-      border={1}
+      borderBottom={2}
+      borderColor='background.default'
       {...props}
     >
       <SectionsMenu

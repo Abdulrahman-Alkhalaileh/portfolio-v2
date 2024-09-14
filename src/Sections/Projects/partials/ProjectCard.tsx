@@ -31,12 +31,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
     >
       <CardContent
         sx={{
-          p: 2,
+          p: { xs: 1, md: 2 },
           pb: 2,
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          gap: 4,
+          gap: { xs: 0.5, md: 4 },
           flex: 1,
         }}
       >
@@ -57,9 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
           </Box>
         </Stack>
         <Divider />
-        <CardActions
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
+        <CardActions sx={{ display: "flex", justifyContent: "center" }}>
           <a href={data.repo} target="__blank">
             <GitHubIcon fontSize="large" />
           </a>
@@ -67,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
             variant="contained"
             color="primary"
             onClick={() => setOpenModal(true)}
-            sx={{ flex: 1, fontSize: { xs: 14, md: 20 } }}
+            sx={{ flex: 1, fontSize: { md: 20 } }}
           >
             View More
           </Button>
@@ -80,18 +78,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         </CardActions>
       </CardContent>
       <CardMedia
-        component="img"
         sx={{
           height: { xs: 200, md: 400 },
-          objectFit: "fill",
           width: { xs: "100%", md: "50%" },
+          boxSizing:'border-box',
           filter: "blur(3px)",
-          m:{sm:0,md:2},
-          borderRadius: {md:'0 20px 20px 0'},
-          border:2
+          m: { sm: 0, md: 2 },
+          borderRadius: { xs: "20px 20px 0 0", md: "0 20px 20px 0" },
+          border: 2,
+          cursor: "pointer",
+          transition: "0.5s all ease",
+          "&:hover": {
+            filter: "none",
+            boxShadow:'none'
+          },
+          backgroundImage: `url(${data.imageUrl})`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          bgcolor:'secondary.main',
+          boxShadow: "#0000008b 0 0 0 1000px inset",
         }}
-        image={data.imageUrl}
-        alt={data.title}
+        onClick={() => setOpenModal(true)}
       />
     </Card>
   );

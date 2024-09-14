@@ -46,7 +46,7 @@ const lightPalette: PaletteOptions = {
     dark: "#304767"
   },
   secondary: {
-    main: "#edf2ff",
+    main: "#a3b6e4",
   },
   background: {
     paper: "#ffffffc1",
