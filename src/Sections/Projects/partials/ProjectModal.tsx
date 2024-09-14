@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Button,
-  CardMedia,
   Chip,
   DialogProps,
   Divider,
@@ -78,13 +77,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               <GitHubIcon fontSize="large" />
             </a>
           </Stack>
-          <CardMedia
+          <Box
             sx={{
               width: { xs: "100%", lg: 400 },
               height: { xs: 250, sm: 400 },
               backgroundImage: `url(${data.imageUrl})`,
               backgroundSize: "contain",
               backgroundPosition: "center",
+              backgroundRepeat:'no-repeat',
               border: 2,
               borderRadius: 3,
               bgcolor:'secondary.main'
