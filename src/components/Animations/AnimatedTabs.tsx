@@ -25,11 +25,12 @@ const AnimatedTabs: React.FC<AnimatedTabsProps> = ({
     <Box
       {...props}
       sx={{
+        width: "fit-content",
         display: "flex",
-        padding: "10px",
+        paddingX: {xs:"5px",md:"10px"},
+        paddingY: "10px",
         bgcolor: "secondary.main",
         borderRadius: "37px",
-        width: "fit-content",
         ...props.sx,
       }}
     >
@@ -39,7 +40,7 @@ const AnimatedTabs: React.FC<AnimatedTabsProps> = ({
           onClick={() => handleChange(index, item.path || item.name)}
           sx={{
             position: "relative",
-            padding: "10px 20px",
+            padding: {xs:"5px 10px",md:"10px 20px"},
             cursor: "pointer",
             zIndex: 1,
           }}

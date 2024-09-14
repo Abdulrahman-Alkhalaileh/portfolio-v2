@@ -1,14 +1,14 @@
 import React from "react";
 import { Typography, TypographyProps } from "@mui/material";
 
-export interface H4Props extends TypographyProps {}
+export interface H5Props extends TypographyProps {}
 
-const H4: React.FC<H4Props> = ({ children, ...props }) => {
+const H5: React.FC<H5Props> = ({ children, ...props }) => {
   return (
     <Typography
-      variant="h4"
+      variant="h5"
       fontWeight={600}
-      fontSize={{ xs: "1.3rem", sm: "1.8rem", lg: "2rem" }}
+      fontSize={{ xs: "1.3rem", sm: "1.5rem", xl: "1.8rem" }}
       color="text.primary"
       {...props}
     >
@@ -17,5 +17,5 @@ const H4: React.FC<H4Props> = ({ children, ...props }) => {
   );
 };
 
-export default H4;
+export default H5;
 

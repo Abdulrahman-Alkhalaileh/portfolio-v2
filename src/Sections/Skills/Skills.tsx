@@ -1,24 +1,32 @@
-import { Stack, StackProps } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Stack, StackProps } from "@mui/material";
 import H2 from "components/Typography/H2";
 import { SkillsType } from "helpers/types";
 import { fetchData } from "helpers/fetchData";
 import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
+import { sortDataById } from "utils/sort";
 
 export interface SkillsProps extends StackProps {}
 
 const Skills: React.FC<SkillsProps> = ({ ...props }) => {
-  const [skills, setSkills] = useState<SkillsType>();
+  const [personalSkills, setPersonalSkills] = useState<SkillsType[]>();
+  const [technicalSkills, setTechnicalSkills] = useState<SkillsType[]>();
 
   useEffect(() => {
-    fetchData("skills").then((data) => setSkills(data[0] as SkillsType));
+    fetchData("personalSkills").then((data) =>
+      setPersonalSkills(data as SkillsType[])
+    );
+    fetchData("technicalSkills").then((data) => {
+      const sortedData = sortDataById(data,'asc');
+      setTechnicalSkills(sortedData as SkillsType[]);
+    });
   }, []);
 
   return (
     <PageTransition>
-      {skills && (
+      {technicalSkills && personalSkills && (
         <Stack
           direction={{ xs: "column", md: "row" }}
           justifyContent="space-evenly"
@@ -35,12 +43,12 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
               direction="vertical"
               sx={{
                 position: "absolute",
-                left: {xs:-30,sm:-40},
+                left: { xs: -30, sm: -40 },
                 bottom: 10,
               }}
             />
             <H2 gutterBottom>Personal Skills:</H2>
-            <DraggingList data={skills.personal} />
+            <DraggingList data={personalSkills} />
           </Stack>
           <Stack justifyContent="center" alignItems="center" gap={3}>
             <Stack
@@ -67,12 +75,12 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
               direction="vertical"
               sx={{
                 position: "absolute",
-                left: {xs:-30,sm:-40},
+                left: { xs: -30, sm: -40 },
                 bottom: 10,
               }}
             />
             <H2 gutterBottom>Technical Skills:</H2>
-            <DraggingList data={skills.technical} />
+            <DraggingList data={technicalSkills} />
           </Stack>
         </Stack>
       )}

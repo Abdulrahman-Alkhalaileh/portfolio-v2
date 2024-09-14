@@ -1,4 +1,8 @@
-export interface ExperienceType {
+export interface BaseType {
+  id: string | number;
+}
+
+export interface ExperienceType extends BaseType {
   info: string[];
   description: string;
   date: string;
@@ -7,8 +11,7 @@ export interface ExperienceType {
   type: string;
 }
 
-export interface ProjectType {
-  id: string;
+export interface ProjectType extends BaseType {
   title: string;
   description: string;
   url: string;
@@ -17,7 +20,7 @@ export interface ProjectType {
   technologies: string[];
 }
 
-export interface SkillsType {
-  personal: string[];
-  technical: string[];
+export interface SkillsType extends BaseType {
+  title: string;
+  imageUrl: string;
 }

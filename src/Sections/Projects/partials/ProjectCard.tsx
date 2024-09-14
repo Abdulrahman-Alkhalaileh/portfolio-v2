@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Card, { CardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import { Box, Button, CardActions, Chip, Divider, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import H1 from "components/Typography/H1";
@@ -27,6 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         transition: "all ease 0.5s",
         borderRadius: 5,
         flexGrow: { xs: 1, sm: 0 },
+        cursor:'grabbing'
       }}
     >
       <CardContent
@@ -77,7 +77,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
           />
         </CardActions>
       </CardContent>
-      <CardMedia
+      <Box
         sx={{
           height: { xs: 200, md: 400 },
           width: { xs: "100%", md: "50%" },
@@ -95,6 +95,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
           backgroundImage: `url(${data.imageUrl})`,
           backgroundSize: "contain",
           backgroundPosition: "center",
+          backgroundRepeat:'no-repeat',
           bgcolor:'secondary.main',
           boxShadow: "#0000008b 0 0 0 1000px inset",
         }}

@@ -1,17 +1,18 @@
 import { Box, Paper, useTheme } from "@mui/material";
-import H4 from "components/Typography/H4";
+import H5 from "components/Typography/H5";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { SkillsType } from "helpers/types";
 
 const height = 70;
 const padding = 10;
 const size = 300; // Adjusted size to match the container height
 
 export interface DraggingListProps {
-  data: string[];
+  data: SkillsType[];
 }
 
 const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
-  const theme = useTheme()
+  const theme = useTheme();
   const scrollY = useMotionValue(0);
 
   // Ensure the scroll range matches the full scrollable height
@@ -25,7 +26,12 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
 
   return (
     <>
-      <Box width="100%" border={3} borderRadius={5} borderColor={theme.palette.divider}>
+      <Box
+        width="100%"
+        border={3}
+        borderRadius={5}
+        borderColor={theme.palette.divider}
+      >
         <motion.div
           style={{
             width,
@@ -58,26 +64,36 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
             bottom: 0,
           }}
         >
-          <Box width={{xs:250,sm:300,xl:400}}>
-          {data.map((item, index) => {
-            return (
+          <Box width={{ xs: 250, sm: 300, xl: 400 }}>
+            {data.map((item, index) => {
+              return (
                 <Paper
                   key={index}
                   sx={{
-                    width: {xs:250,sm:300,xl:400},
+                    width: { xs: 250, sm: 300, xl: 400 },
                     height: height,
                     borderRadius: 5,
                     position: "absolute",
                     top: (height + padding) * index,
                     display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
+                    gap: { xs: 2, sm: 3, xl: 3 },
+                    px: { xs: 3, xl: 7 },
+                    boxSizing: "border-box",
                   }}
                 >
-                  <H4>{item}</H4>
+                  <Box
+                    component="img"
+                    src={item.imageUrl}
+                    width={{ xs: 30, sm: 35 }}
+                    height={{ xs: 30, sm: 35 }}
+                    draggable={false}
+                    alt={item.title}
+                  />
+                  <H5 flex={1}>{item.title}</H5>
                 </Paper>
-            );
-          })}
+              );
+            })}
           </Box>
         </motion.div>
       </motion.div>
