@@ -1,11 +1,12 @@
-import { Stack, StackProps } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Stack, StackProps } from "@mui/material";
 import H2 from "components/Typography/H2";
 import { SkillsType } from "helpers/types";
 import { fetchData } from "helpers/fetchData";
 import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
+import { sortDataById } from "utils/sort";
 
 export interface SkillsProps extends StackProps {}
 
@@ -17,9 +18,10 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
     fetchData("personalSkills").then((data) =>
       setPersonalSkills(data as SkillsType[])
     );
-    fetchData("technicalSkills").then((data) =>
-      setTechnicalSkills(data as SkillsType[])
-    );
+    fetchData("technicalSkills").then((data) => {
+      const sortedData = sortDataById(data,'asc');
+      setTechnicalSkills(sortedData as SkillsType[]);
+    });
   }, []);
 
   return (
