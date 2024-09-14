@@ -27,6 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, ...props }) => {
         transition: "all ease 0.5s",
         borderRadius: 5,
         flexGrow: { xs: 1, sm: 0 },
+        cursor:'grabbing'
       }}
     >
       <CardContent
