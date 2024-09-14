@@ -23,7 +23,7 @@ export const themesList = [
         width={20}
         height={20}
         borderRadius="50%"
-        bgcolor="#2e323d"
+        bgcolor="#131546"
         borderColor="#0c5dcc!important"
         border={5}
       ></Box>
@@ -37,7 +37,7 @@ export const themesList = [
         width={20}
         height={20}
         borderRadius="50%"
-        bgcolor="#3d2e2e"
+        bgcolor="#4d1212"
         borderColor="#cc0c0c!important"
         border={5}
       ></Box>
