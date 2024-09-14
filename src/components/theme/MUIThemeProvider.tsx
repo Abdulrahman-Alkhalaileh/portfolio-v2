@@ -51,7 +51,7 @@ const MUIThemeProvider: React.FC<MUIThemeProviderProps> = ({
       if (mode === 'twilight') {
         body.style.setProperty('--scrollbar-thumb-color','#bf4e64')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#953c4e')
-        body.style.backgroundColor = "#443f6e";
+        body.style.backgroundColor = "#38345b";
       }
     }
   }, [mode]);

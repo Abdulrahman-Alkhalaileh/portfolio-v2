@@ -5,35 +5,70 @@ export const themesList = [
     index: 0,
     name: "light",
     element: (
-      <Box width={30} height={30} bgcolor="white" borderRadius="50%"></Box>
+      <Box
+        width={20}
+        height={20}
+        borderRadius="50%"
+        bgcolor="#a3b6e4"
+        borderColor="#3e76c4!important"
+        border={5}
+      ></Box>
     ),
   },
   {
     index: 1,
     name: "dark",
     element: (
-      <Box width={30} height={30} bgcolor="#202b62" borderRadius="50%"></Box>
+      <Box
+        width={20}
+        height={20}
+        borderRadius="50%"
+        bgcolor="#2e323d"
+        borderColor="#0c5dcc!important"
+        border={5}
+      ></Box>
     ),
   },
   {
     index: 2,
     name: "red",
     element: (
-      <Box width={30} height={30} bgcolor="#880000" borderRadius="50%"></Box>
+      <Box
+        width={20}
+        height={20}
+        borderRadius="50%"
+        bgcolor="#3d2e2e"
+        borderColor="#cc0c0c!important"
+        border={5}
+      ></Box>
     ),
   },
   {
     index: 3,
     name: "olive",
     element: (
-      <Box width={30} height={30} bgcolor="#697565" borderRadius="50%"></Box>
+      <Box
+        width={20}
+        height={20}
+        bgcolor="#c2b8aa"
+        borderColor="#4d4e46!important"
+        border={5}
+        borderRadius="50%"
+      ></Box>
     ),
   },
   {
     index: 4,
     name: "twilight",
     element: (
-      <Box width={30} height={30} bgcolor="#bf4e64" borderRadius="50%"></Box>
+      <Box
+        width={20}
+        height={20}
+        bgcolor="#38345b"
+        borderColor="#bf4e65c8!important"
+        border={5}
+        borderRadius="50%"
+      ></Box>
     ),
   },
 ];
