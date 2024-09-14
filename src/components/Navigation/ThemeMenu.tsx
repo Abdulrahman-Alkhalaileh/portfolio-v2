@@ -11,8 +11,11 @@ const ThemeMenu: React.FC<ThemeMenuProps> = ({ ...props }) => {
       <CustomMenu
         icon={
           <ContrastIcon
-            sx={{ width: { xs: 25, sm: 35 }, height: { xs: 25, sm: 35 } }}
-            color="primary"
+            sx={{
+              width: { xs: 25, sm: 35 },
+              height: { xs: 25, sm: 35 },
+              color: "text.primary",
+            }}
           />
         }
         {...props}

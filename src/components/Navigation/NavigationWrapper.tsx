@@ -1,4 +1,4 @@
-import { Box, BoxProps } from "@mui/material";
+import { Box, BoxProps, Divider } from "@mui/material";
 import React from "react";
 import Header from "./Header";
 import H1 from "components/Typography/H1";
@@ -16,7 +16,7 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
 
   return (
     <>
-      <Header/>
+      <Header />
       <Box
         px={{ xs: 3, md: 5, lg: 7, xl: 9 }}
         pt="100px"
@@ -28,8 +28,12 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
         justifyContent="space-between"
         gap={2}
       >
-        <TextAnimation transition={{ duration: 1.2 }} >
-          <H1 pt={{xs:1}} pb={{xs:2}} >{pageTitle}</H1>
+        <TextAnimation
+          transition={{ duration: 1.2 }}
+          style={{ paddingBottom: 16 }}
+        >
+          <H1 pt={{ xs: 1 }}>{pageTitle}</H1>
+          <Divider />
         </TextAnimation>
         {children}
       </Box>
