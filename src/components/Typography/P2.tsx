@@ -1,13 +1,13 @@
 import React from "react";
 import { Typography, TypographyProps } from "@mui/material";
 
-export interface P1Props extends TypographyProps {}
+export interface P2Props extends TypographyProps {}
 
-const P1: React.FC<P1Props> = ({ children, ...props }) => {
+const P2: React.FC<P2Props> = ({ children, ...props }) => {
   return (
     <Typography
-      variant="body1"
-      fontSize={{ xs: 15, sm: 17, md: 18, xl: 19 }}
+      variant="body2"
+      fontSize={{ xs: 10, sm: 15, md: 18, xl: 19 }}
       color="text.primary"
       fontWeight={500}
       {...props}
@@ -17,4 +17,4 @@ const P1: React.FC<P1Props> = ({ children, ...props }) => {
   );
 };
 
-export default P1;
+export default P2;

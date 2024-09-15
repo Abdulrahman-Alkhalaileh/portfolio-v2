@@ -153,6 +153,9 @@ export const getTheme = (mode: ThemeType) => {
       body1: {
         fontFamily: "'SUSE', sans-serif",
       },
+      body2: {
+        fontFamily: "'SUSE', sans-serif",
+      },
     },
     components: {
       MuiButton: {

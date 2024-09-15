@@ -1,10 +1,11 @@
 import { Box } from "@mui/material";
+import { AnimatedItemType } from "./sectionItems";
 
-export const themesList = [
+export const themesList: AnimatedItemType[] = [
   {
     index: 0,
     name: "light",
-    element: (
+    icon: (
       <Box
         width={20}
         height={20}
@@ -18,7 +19,7 @@ export const themesList = [
   {
     index: 1,
     name: "dark",
-    element: (
+    icon: (
       <Box
         width={20}
         height={20}
@@ -32,7 +33,7 @@ export const themesList = [
   {
     index: 2,
     name: "red",
-    element: (
+    icon: (
       <Box
         width={20}
         height={20}
@@ -46,7 +47,7 @@ export const themesList = [
   {
     index: 3,
     name: "olive",
-    element: (
+    icon: (
       <Box
         width={20}
         height={20}
@@ -60,7 +61,7 @@ export const themesList = [
   {
     index: 4,
     name: "twilight",
-    element: (
+    icon: (
       <Box
         width={20}
         height={20}
