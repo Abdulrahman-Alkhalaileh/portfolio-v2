@@ -22,7 +22,7 @@ const MUIThemeProvider: React.FC<MUIThemeProviderProps> = ({
   ...props
 }) => {
   const [mode, setMode] = React.useState(
-    localStorage.getItem("theme") || "light"
+    localStorage.getItem("theme") || "dark"
   );
 
   React.useEffect(() => {

@@ -9,6 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: all ease 1s;
+  -webkit-tap-highlight-color: transparent !important; /*To remove the blue box on mobile screens*/
   --scrollbar-thumb-color: #0146af;
   --scrollbar-thumb-color-hovered: #013788;
 }
