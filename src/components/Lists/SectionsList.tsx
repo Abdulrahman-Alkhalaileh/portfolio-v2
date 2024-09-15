@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { sections } from "configs/sectionItems";
 import { useLocation } from "react-router-dom";
-import AnimatedTabs from "components/Animations/AnimatedTabs";
-import { BoxProps } from "@mui/material";
+import AnimatedTabs, { AnimatedTabsProps } from "components/Animations/AnimatedTabs";
 
-export interface SectionsListProps extends BoxProps{
+export interface SectionsListProps extends Partial<AnimatedTabsProps>{
   layoutId?: string;
 }
 

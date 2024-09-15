@@ -19,12 +19,18 @@ const MobileNav: React.FC<MobileNavProps> = ({ ...props }) => {
       position="fixed"
       borderColor="background.default"
       style={{ bottom: 0 }}
-      animate={{ bottom: scrollDirection === "up" ? -70 : 0 }}
+      animate={{ bottom: scrollDirection === "up" ? -80 : 0 }}
     >
       <SectionsList
         layoutId="mobileNav"
         justifyContent="space-evenly"
-        sx={{ borderRadius: 0, width: "100%", bgcolor: "background.paper" }}
+        sx={{
+          borderRadius: 0,
+          width: "100%",
+          bgcolor: "background.paper",
+          pt:1
+        }}
+        isMobile={true}
       />
     </Box>
   );
