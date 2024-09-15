@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
+import { AnimatedItemType } from "./sectionItems";
 
-export const themesList = [
+export const themesList: AnimatedItemType[] = [
   {
     index: 0,
     name: "light",
