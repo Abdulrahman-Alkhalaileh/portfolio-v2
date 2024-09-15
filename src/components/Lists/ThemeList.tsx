@@ -36,7 +36,7 @@ const ThemeList: React.FC<ThemeListProps> = () => {
           p: 1,
           bgcolor: "background.default",
           flexWrap: "wrap",
-          width: 210,
+          width: {xs:210,md:235},
           borderRadius: 3,
         }}
       />
