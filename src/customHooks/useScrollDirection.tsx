@@ -10,6 +10,7 @@ export const useScrollDirection = (initialDirection: "up" | "down") => {
   const [pathname] = useState(location.pathname);
 
   useEffect(() => {
+    setScrollDirection(initialDirection)
     let lastScrollY = window.scrollY;
 
     // Scroll event handler
