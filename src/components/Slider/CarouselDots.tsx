@@ -5,6 +5,7 @@ export interface CarouselDotsProps extends BoxProps {
   count: number;
   activeStep: number;
   setActiveStep: (index: number) => void;
+  dotProps?: BoxProps;
 }
 
 const circleStyle: SxProps = {
@@ -19,17 +20,18 @@ const CarouselDots: React.FC<CarouselDotsProps> = ({
   count,
   activeStep,
   setActiveStep,
+  dotProps,
   ...props
 }) => {
   return (
-    <Box display="flex" gap={1}>
+    <Box display="flex" gap={1} {...props}>
       {Array(count)
         .fill(0)
         .map((item, index) => (
           <Box
             key={crypto.randomUUID()}
-            {...props}
-            sx={{ ...circleStyle, ...props.sx }}
+            {...dotProps}
+            sx={{ ...circleStyle, ...dotProps?.sx }}
             bgcolor={activeStep === index ? "primary.main" : "secondary.main"}
             onClick={() => setActiveStep(index)}
           ></Box>

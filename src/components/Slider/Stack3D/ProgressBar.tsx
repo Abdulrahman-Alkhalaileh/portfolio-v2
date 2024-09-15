@@ -30,6 +30,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       borderRadius={5}
       overflow="hidden"
       boxShadow='#000000 0px 0px 2px 0px'
+      {...props}
     >
       <motion.div
         animate={{ width: calculateWidth(index + 1, count) }}
