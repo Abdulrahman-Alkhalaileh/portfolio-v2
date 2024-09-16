@@ -21,7 +21,7 @@ export interface AnimatedItemType {
 export const sections: AnimatedItemType[] = [
   {
     index: 0,
-    name: "home",
+    name: "about",
     element: <Home />,
     path: "/",
     icon: <HomeIcon />,

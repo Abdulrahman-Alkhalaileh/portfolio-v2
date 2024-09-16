@@ -13,7 +13,7 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
   ...props
 }) => {
   const pathname = useLocation().pathname;
-  const pageTitle = pathname.length > 1 ? pathname.substring(1) : "Home";
+  const pageTitle = pathname.length > 1 ? pathname.substring(1) : "About";
 
   return (
     <>
