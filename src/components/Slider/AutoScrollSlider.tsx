@@ -54,9 +54,9 @@ const AutoScrollSlider: React.FC<AutoScrollSliderProps> = ({
         py: 2,
         display: "flex",
         position: "relative",
-        borderTop:3,
-        borderBottom:3,
-        borderColor:'text.primary',
+        borderTop: 3,
+        borderBottom: 3,
+        borderColor: "text.primary",
         ...props.sx,
       }}
     >
@@ -79,7 +79,7 @@ const AutoScrollSlider: React.FC<AutoScrollSliderProps> = ({
           x: [`${itemWidth}px`, `-${position}px`, `${itemWidth}px`], // Move left, then reverse to start
         }}
         transition={{
-          duration: 9,
+          duration: isMobile ? 15 : 9,
           ease: "linear",
           repeat: Infinity,
         }}
