@@ -14,13 +14,15 @@ export function HighlightPhrases(text: string) {
     "reactJS",
     "nextJS",
     "hashemite",
+    "material ui",
+    "responsive"
   ];
 
   // Create a regex that will match any of the phrases, case-insensitive
   const regex = new RegExp(`\\b(${phrases.join("|")})\\b`, "gi");
 
   // Replace the matching phrases with a span that styles them
-  const highlightedText = text.toLowerCase().replace(regex, (matched) => {
+  const highlightedText = text.replace(regex, (matched) => {
     return `<span style="color: ${theme.palette.primary.main};">${matched}</span>`;
   });
 
