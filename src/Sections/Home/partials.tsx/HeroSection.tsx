@@ -63,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ...props }) => {
           download="My_Resume.pdf"
           fullWidth
           sx={{
-            border: 3,
+            border: 2,
             minWidth: { xs: 100, sm: 120 },
             fontSize: { xs: 16, sm: 20 },
             display: "flex",

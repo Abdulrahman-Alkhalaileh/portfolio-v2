@@ -66,7 +66,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
           href={HOME_CONTENT.linkedId}
           fullWidth
           sx={{
-            border: 3,
+            border: 2,
             minWidth: { xs: 100, sm: 120 },
             fontSize: { xs: 16, sm: 20 },
             color: "text.primary",
@@ -80,7 +80,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
           variant="contained"
           color="secondary"
           sx={{
-            border: 3,
+            border: 2,
             minWidth: { xs: 100, sm: 120 },
             fontSize: { xs: 16, sm: 20 },
             color: "text.primary",
