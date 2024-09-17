@@ -13,13 +13,13 @@ const NavigationWrapper: React.FC<NavigationWrapperProps> = ({
   ...props
 }) => {
   const pathname = useLocation().pathname;
-  const pageTitle = pathname.length > 1 ? pathname.substring(1) : "Home";
+  const pageTitle = pathname.length > 1 ? pathname.substring(1) : "About";
 
   return (
     <>
       <Header />
       <Box
-        px={{ xs: 3, md: 5, lg: 7, xl: 9 }}
+        px={{ xs: 3, md: 5, lg: 7, xl: 9,xxl:30 }}
         pt="100px"
         pb={{ xs: "80px", md: "16px" }}
         minHeight={{xs:'calc(100vh - 190px)',md:"calc(100vh - 116px)"}}

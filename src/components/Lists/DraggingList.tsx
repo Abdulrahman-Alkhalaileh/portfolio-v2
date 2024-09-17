@@ -89,6 +89,10 @@ const DraggingList: React.FC<DraggingListProps> = ({ data }) => {
                     height={{ xs: 30, sm: 35 }}
                     draggable={false}
                     alt={item.title}
+                    sx={{
+                      filter:
+                        "drop-shadow(0 0.1rem 0.12rem rgba(0, 0, 0, 0.61))",
+                    }}
                   />
                   <H5 flex={1}>{item.title}</H5>
                 </Paper>

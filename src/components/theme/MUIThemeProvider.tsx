@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material";
 import { ThemeProviderProps } from "@mui/material/styles/ThemeProvider";
-import getTheme, { ThemeType } from "./theme";
+import getTheme, { backgroundColors, ThemeType } from "./theme";
 
 export interface MUIThemeProviderProps extends Partial<ThemeProviderProps> {}
 
@@ -31,27 +31,27 @@ const MUIThemeProvider: React.FC<MUIThemeProviderProps> = ({
       if (mode === "dark"){
         body.style.setProperty('--scrollbar-thumb-color','#0146af')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#013788')
-        body.style.backgroundColor = "#090a21";
+        body.style.backgroundColor = backgroundColors.dark;
       }
       if (mode === "light") {
         body.style.setProperty('--scrollbar-thumb-color','#0146af')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#013788')
-        body.style.backgroundColor = "#70a7ee";
+        body.style.backgroundColor = backgroundColors.light;
       }
       if (mode === "red") {
         body.style.setProperty('--scrollbar-thumb-color','#af0101')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#880101')
-        body.style.backgroundColor = "#250909";
+        body.style.backgroundColor = backgroundColors.red;
       }
       if (mode === 'olive') {
         body.style.setProperty('--scrollbar-thumb-color','#3c3d37')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#2e2e2a')
-        body.style.backgroundColor = "#f4e6d1";
+        body.style.backgroundColor = backgroundColors.olive;
       }
       if (mode === 'twilight') {
         body.style.setProperty('--scrollbar-thumb-color','#bf4e64')
         body.style.setProperty('--scrollbar-thumb-color-hovered','#953c4e')
-        body.style.backgroundColor = "#38345b";
+        body.style.backgroundColor = backgroundColors.twilight;
       }
     }
   }, [mode]);

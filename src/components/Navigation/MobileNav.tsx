@@ -20,6 +20,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ ...props }) => {
       borderColor="background.default"
       style={{ bottom: 0 }}
       animate={{ bottom: scrollDirection === "up" ? -80 : 0 }}
+      zIndex={100}
     >
       <SectionsList
         layoutId="mobileNav"
@@ -28,7 +29,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ ...props }) => {
           borderRadius: 0,
           width: "100%",
           bgcolor: "background.paper",
-          pt:1
+          pt: 1,
         }}
         isMobile={true}
       />
