@@ -59,7 +59,10 @@ const AnimatedPic: React.FC<AnimatedPicProps> = ({ imageUrl, sx }) => {
           backgroundRepeat: "no-repeat",
           filter: "drop-shadow(#000000 0px 5px 10px)",
           ...(hover && {
-            filter: `drop-shadow(${theme.palette.primary.main} 15px 0px 0px)`,
+            filter: {
+              xs: `drop-shadow(${theme.palette.primary.main} 7px 0px 0px)`,
+              md: `drop-shadow(${theme.palette.primary.main} 15px 0px 0px)`,
+            },
           }),
           ...sx,
         }}

@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
     <PageTransition>
       <Stack spacing={5}>
         <Stack
-          spacing={6}
+          spacing={{xs:0,md:6}}
           direction={{ xs: "column", md: "row" }}
           bgcolor="background.default"
           alignItems="center"
