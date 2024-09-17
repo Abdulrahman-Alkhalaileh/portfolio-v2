@@ -23,7 +23,7 @@ export function HighlightPhrases(text: string) {
 
   // Replace the matching phrases with a span that styles them
   const highlightedText = text.replace(regex, (matched) => {
-    return `<span style="color: ${theme.palette.primary.main};">${matched}</span>`;
+    return `<span style="color: ${theme.palette.primary.main}; font-weight: 900">${matched}</span>`;
   });
 
   return highlightedText;

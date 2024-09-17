@@ -7,6 +7,7 @@ import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
 import { sortDataById } from "utils/sort";
+import { SKILLS_CONTENT } from "configs/constant";
 
 export interface SkillsProps extends StackProps {}
 
@@ -19,7 +20,7 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
       setPersonalSkills(data as SkillsType[])
     );
     fetchData("technicalSkills").then((data) => {
-      const sortedData = sortDataById(data,'asc');
+      const sortedData = sortDataById(data, "asc");
       setTechnicalSkills(sortedData as SkillsType[]);
     });
   }, []);
@@ -62,7 +63,7 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
                 boxShadow: "#fff 0px 0px 10px 5px",
               }}
             >
-              <img src="https://i.imgur.com/ZduvM2w.jpeg" alt="personal pic" />
+              <img src={SKILLS_CONTENT.pic} alt="personal pic" />
             </Stack>
           </Stack>
           <Stack

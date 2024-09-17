@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ ...props }) => {
       alignItems="center"
       justifyContent="space-between"
       gap={1}
-      px={{ xs: 2, md: 12 }}
+      px={{ xs: 3, md: 5, lg: 7, xl: 9,xxl:30 }}
       position="fixed"
       zIndex={1000}
       boxSizing="border-box"
