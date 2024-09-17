@@ -1,31 +1,55 @@
 import { createTheme } from "@mui/material/styles";
 import { PaletteOptions } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+  interface PaletteOptions {
+    backgroundColor?: PaletteOptions["primary"];
+  }
+
+  interface Palette {
+    backgroundColor: Palette["primary"];
+  }
+
+  interface BreakpointOverrides {
+    xxl: true;
+  }
+}
+
 export type ThemeType = "light" | "dark" | "red" | "olive" | "twilight";
+
+export const backgroundColors = {
+  dark: "rgba(9, 10, 33, 1)",
+  light: "rgba(112, 167, 238, 1)",
+  red: "rgba(37, 9, 9, 1)",
+  olive: "rgba(244, 230, 209, 1)",
+  twilight: "rgba(56, 52, 91, 1)",
+};
 
 const twilightPalette: PaletteOptions = {
   mode: "dark",
+  backgroundColor: { main: backgroundColors.twilight },
   primary: {
     main: "#e6b03c",
-    dark: "#38345b"
+    dark: "#38345b",
   },
   secondary: {
     main: "#e06d56",
   },
   background: {
     paper: "#bf4e65c8",
-    default: "#bf4e64",
+    default: "#bf4e65",
   },
   text: {
-    primary: '#eee0a1'
-  }
+    primary: "#eee0a1",
+  },
 };
 
 const olivePalette: PaletteOptions = {
   mode: "light",
+  backgroundColor: { main: backgroundColors.olive },
   primary: {
     main: "#4d4e46",
-    dark: "#42433c"
+    dark: "#42433c",
   },
   secondary: {
     main: "#c2b8aa",
@@ -35,55 +59,58 @@ const olivePalette: PaletteOptions = {
     default: "#8c9f86",
   },
   text: {
-    primary: '#23291d'
-  }
+    primary: "#23291d",
+  },
 };
 
 const lightPalette: PaletteOptions = {
   mode: "light",
+  backgroundColor: { main: backgroundColors.light },
   primary: {
     main: "#0c5dcc",
-    dark: "#304767"
+    dark: "#304767",
   },
   secondary: {
     main: "#a3b6e4",
   },
   background: {
     paper: "#ffffffc1",
-    default: "#ffffffed",
+    default: "#ffffff",
   },
   text: {
-    primary: '#072b5c'
-  }
+    primary: "#072b5c",
+  },
 };
 
 const darkPalette: PaletteOptions = {
   mode: "dark",
+  backgroundColor: { main: backgroundColors.dark },
   primary: {
     main: "#0c5dcc",
-    dark: "#090a21"
+    dark: "#090a21",
   },
   secondary: {
     main: "#2e323d",
   },
   background: {
     paper: "#1c2553cf",
-    default: "#1c2553e6",
+    default: "#1c2553",
   },
 };
 
 const redPalette: PaletteOptions = {
   mode: "dark",
+  backgroundColor: { main: backgroundColors.red },
   primary: {
     main: "#cc0c0c",
-    dark: "#250909"
+    dark: "#250909",
   },
   secondary: {
     main: "#3d2e2e",
   },
   background: {
     paper: "#5c1e1ed9",
-    default: "#3a1313ec",
+    default: "#3a1313",
   },
 };
 
@@ -115,6 +142,7 @@ export const getTheme = (mode: ThemeType) => {
         md: 900,
         lg: 1200,
         xl: 1536,
+        xxl: 1700,
       },
     },
     typography: {
@@ -152,9 +180,11 @@ export const getTheme = (mode: ThemeType) => {
       },
       body1: {
         fontFamily: "'SUSE', sans-serif",
+        textAlign: "justify",
       },
       body2: {
         fontFamily: "'SUSE', sans-serif",
+        textAlign: "justify",
       },
     },
     components: {
