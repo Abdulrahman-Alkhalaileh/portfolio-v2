@@ -10,8 +10,8 @@ export const themesList: AnimatedItemType[] = [
         width={20}
         height={20}
         borderRadius="50%"
-        bgcolor="#a3b6e4"
-        borderColor="#3e76c4!important"
+        bgcolor="#ffff"
+        borderColor="#bac5da!important"
         border={5}
       ></Box>
     ),
