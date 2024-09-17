@@ -19,7 +19,7 @@ export type ThemeType = "light" | "dark" | "red" | "olive" | "twilight";
 
 export const backgroundColors = {
   dark: "rgba(9, 10, 33, 1)",
-  light: "rgba(112, 167, 238, 1)",
+  light: "rgba(255, 255, 255, 1)",
   red: "rgba(37, 9, 9, 1)",
   olive: "rgba(244, 230, 209, 1)",
   twilight: "rgba(56, 52, 91, 1)",
@@ -67,18 +67,18 @@ const lightPalette: PaletteOptions = {
   mode: "light",
   backgroundColor: { main: backgroundColors.light },
   primary: {
-    main: "#0c5dcc",
+    main: "#2851c1",
     dark: "#304767",
   },
   secondary: {
-    main: "#a3b6e4",
+    main: "#98a6c7",
   },
   background: {
-    paper: "#ffffffc1",
-    default: "#ffffff",
+    paper: "#bac5dabf",
+    default: "#bac5da",
   },
   text: {
-    primary: "#072b5c",
+    primary: "#2b2d42",
   },
 };
 
@@ -90,7 +90,7 @@ const darkPalette: PaletteOptions = {
     dark: "#090a21",
   },
   secondary: {
-    main: "#2e323d",
+    main: "#374465",
   },
   background: {
     paper: "#1c2553cf",
@@ -193,6 +193,8 @@ export const getTheme = (mode: ThemeType) => {
           root: {
             textTransform: "capitalize",
             fontSize: 20,
+            whiteSpace:'nowrap',
+            borderRadius:10
           },
         },
       },
