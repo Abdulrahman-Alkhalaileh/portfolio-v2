@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { IconButton, IconButtonProps, Menu, MenuProps } from "@mui/material";
 
 export interface CustomMenuProps extends Partial<MenuProps> {
@@ -12,7 +12,18 @@ const CustomMenu: React.FC<CustomMenuProps> = ({
   iconButtonProps,
   ...props
 }) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const iconButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  // Initially set the anchorEl to the IconButton by default
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // Set anchorEl to the IconButton element after it's rendered
+    if (iconButtonRef.current) {
+      setAnchorEl(iconButtonRef.current);
+    }
+  }, []);
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -23,21 +34,23 @@ const CustomMenu: React.FC<CustomMenuProps> = ({
   return (
     <>
       <IconButton
-        {...iconButtonProps}
         onClick={handleClick}
+        ref={iconButtonRef}
+        {...iconButtonProps}
         sx={{ bgcolor: "secondary.main", ...iconButtonProps?.sx }}
       >
         {icon}
       </IconButton>
       <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        {...props}
         MenuListProps={{
           "aria-labelledby": "basic-button",
-          sx: { py: 0 },
+          sx: { py: 1 },
         }}
+        id="basic-menu"
+        anchorEl={anchorEl}
         sx={{
           "& .MuiMenu-paper": {
             background: "none",
@@ -45,7 +58,6 @@ const CustomMenu: React.FC<CustomMenuProps> = ({
           },
           ...props.sx,
         }}
-        {...props}
       >
         {children}
       </Menu>

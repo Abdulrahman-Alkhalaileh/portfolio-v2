@@ -3,10 +3,12 @@ import AnimatedTabs from "components/Animations/AnimatedTabs";
 import { ThemeContext } from "components/theme/MUIThemeProvider";
 import { ThemeType } from "components/theme/theme";
 import { themesList } from "configs/themeItems";
+import { ModalContext } from "context/ModalContext";
 
 export interface ThemeListProps {}
 
 const ThemeList: React.FC<ThemeListProps> = () => {
+  const { setOpenTheme } = useContext(ModalContext)
   const { setTheme } = useContext(ThemeContext);
   const [selected, setSelected] = useState(0);
 
@@ -23,6 +25,9 @@ const ThemeList: React.FC<ThemeListProps> = () => {
   const handleChangeSection = (index: number, name: string) => {
     setSelected(index);
     setTheme(name as ThemeType);
+    setTimeout(() => {
+      setOpenTheme(false)
+    }, 300);
   };
 
   return (
