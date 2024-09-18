@@ -6,6 +6,7 @@ import SectionsMenu from "./SectionsMenu";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
 import useScrollDirection from "customHooks/useScrollDirection";
+import { ModalContextProvider } from "context/ModalContext";
 
 export interface HeaderProps extends StackProps {}
 
@@ -31,12 +32,14 @@ const Header: React.FC<HeaderProps> = ({ ...props }) => {
       animate={{ top: scrollDirection === "down" ? -100 : 0 }}
       {...props}
     >
-      <SectionsMenu
-        iconButtonProps={{ sx: { display: { xs: "flex", md: "none" } } }}
-      />
+      <ModalContextProvider>
+        <SectionsMenu
+          iconButtonProps={{ sx: { display: { xs: "flex", md: "none" } } }}
+        />
       <Logo />
       <SectionsList sx={{ display: { xs: "none", md: "flex" } }} />
-      <ThemeMenu />
+        <ThemeMenu />
+      </ModalContextProvider>
     </Stack>
   );
 };
