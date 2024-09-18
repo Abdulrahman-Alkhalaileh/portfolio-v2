@@ -47,7 +47,7 @@ const CustomMenu: React.FC<CustomMenuProps> = ({
         {...props}
         MenuListProps={{
           "aria-labelledby": "basic-button",
-          sx: { py: 1 },
+          sx: { py: 0 },
         }}
         id="basic-menu"
         anchorEl={anchorEl}
@@ -55,6 +55,7 @@ const CustomMenu: React.FC<CustomMenuProps> = ({
           "& .MuiMenu-paper": {
             background: "none",
             borderRadius: 5,
+            my:1
           },
           ...props.sx,
         }}
