@@ -78,6 +78,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
         <Button
           fullWidth
           variant="contained"
+          href={`mailto:${HOME_CONTENT.email}`}
           color="secondary"
           sx={{
             border: 2,
