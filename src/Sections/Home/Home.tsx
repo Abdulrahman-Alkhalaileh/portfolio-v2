@@ -14,7 +14,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
   const [skills, setSkills] = useState<SkillsType[]>([]);
   // const [projects, setProjects] = useState<ProjectType[]>([]);
   useEffect(() => {
-    fetchData("technicalSkills").then((data) =>
+    fetchData({collectionName:"technicalSkills"}).then((data) =>
       setSkills(data as SkillsType[])
     );
     // fetchData("projects").then((data) => setProjects(data as ProjectType[]));

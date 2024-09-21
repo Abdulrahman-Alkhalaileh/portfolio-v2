@@ -15,7 +15,7 @@ const Experience: React.FC<ExperienceProps> = ({ ...props }) => {
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
-    fetchData("experience").then((data) =>
+    fetchData({collectionName:"experience"}).then((data) =>
       setExperience(data as ExperienceType[])
     );
   }, []);
