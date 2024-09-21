@@ -10,7 +10,7 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
 
   useEffect(() => {
-    fetchData("projects").then((data) => setProjects(data as ProjectType[]));
+    fetchData({collectionName:"projects"}).then((data) => setProjects(data as ProjectType[]));
   }, []);
 
   return (

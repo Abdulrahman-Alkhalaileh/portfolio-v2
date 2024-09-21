@@ -12,7 +12,7 @@ const HOME_CONTENT = {
   linkedId:"https://www.linkedin.com/in/abdulrahman-alkhalaileh/",
   email: 'abdulrahman.alkhalaileh@gmail.com',
   github: 'https://github.com/Abdulrahman-Alkhalaileh',
-  resume: 'https://drive.google.com/uc?export=download&id=1fk-KPtWFn894bmJZg40J4YZjB3UBPZSw',
+  resume: "https://drive.google.com/uc?id=1m5y807jigJsYOzNhKv6UmEV_aLGk2aDT",
 }
 
 export { SKILLS_CONTENT,HOME_CONTENT };

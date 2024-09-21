@@ -6,7 +6,6 @@ import { fetchData } from "helpers/fetchData";
 import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
-import { sortDataById } from "utils/sort";
 import { SKILLS_CONTENT } from "configs/constant";
 
 export interface SkillsProps extends StackProps {}
@@ -16,12 +15,11 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
   const [technicalSkills, setTechnicalSkills] = useState<SkillsType[]>();
 
   useEffect(() => {
-    fetchData("personalSkills").then((data) =>
+    fetchData({collectionName:"personalSkills"}).then((data) =>
       setPersonalSkills(data as SkillsType[])
     );
-    fetchData("technicalSkills").then((data) => {
-      const sortedData = sortDataById(data, "asc");
-      setTechnicalSkills(sortedData as SkillsType[]);
+    fetchData({collectionName:"technicalSkills",sort:{order:'desc'}}).then((data) => {
+      setTechnicalSkills(data as SkillsType[]);
     });
   }, []);
 
