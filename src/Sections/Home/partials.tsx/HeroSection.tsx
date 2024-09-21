@@ -1,13 +1,13 @@
 import React from "react";
-import { Box, Button, Stack, StackProps } from "@mui/material";
+import { Box, Stack, StackProps } from "@mui/material";
 import AnimatedPic from "components/Animations/AnimatedPic";
 import H1 from "components/Typography/H1";
 import P1 from "components/Typography/P1";
 import { HOME_CONTENT } from "configs/constant";
 
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import { HighlightPhrases } from "utils/highlightText";
 import ActionsSection from "./ActionsSection";
+import ResumeButton from "./resume/ResumeButton";
 
 export interface HeroSectionProps extends StackProps {}
 
@@ -56,24 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ...props }) => {
             dangerouslySetInnerHTML={{ __html: summary }}
           ></P1>
         </Stack>
-        <Button
-          variant="contained"
-          color="secondary"
-          href={HOME_CONTENT.resume}
-          download="My_Resume.pdf"
-          fullWidth
-          sx={{
-            border: 2,
-            minWidth: { xs: 100, sm: 120 },
-            fontSize: { xs: 16, sm: 20 },
-            display: "flex",
-            gap: 1,
-            color: "text.primary",
-            alignItems: "center",
-          }}
-        >
-          Resume <CloudDownloadIcon />
-        </Button>
+        <ResumeButton />
         <ActionsSection />
       </Stack>
     </Stack>
