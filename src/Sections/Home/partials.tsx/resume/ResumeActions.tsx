@@ -25,13 +25,15 @@ const ResumeActions: React.FC<ResumeActionsProps> = ({
           position: "absolute",
           top: "0px",
           left: "0px",
+          borderRadius: "0px 0px 10px 0px",
+          overflow: "hidden",
           ...props.sx,
         }}
       >
         <Button
           onClick={() => handleFullScreen()}
-          style={{
-            borderRadius: "0px 0px 0px 0px",
+          sx={{
+            borderRadius: 0,
           }}
         >
           {fullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
@@ -39,8 +41,8 @@ const ResumeActions: React.FC<ResumeActionsProps> = ({
         <Button
           href={HOME_CONTENT.resume}
           download="Abdulrahman-Alkhalaileh.pdf"
-          style={{
-            borderRadius: "0px 0px 10px 0px",
+          sx={{
+            borderRadius: 0,
           }}
         >
           <DownloadIcon />
