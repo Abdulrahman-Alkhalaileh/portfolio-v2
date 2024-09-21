@@ -47,7 +47,7 @@ const Resume: React.FC<ResumeProps> = ({ ...props }) => {
           style={{
             position: "absolute",
             width: "100%",
-            height: fullScreen ? "100vh" : "100%",
+            height: fullScreen ? "100dvh" : "100%",
             top: 0,
             left: 0,
             border: "none",
