@@ -3,16 +3,18 @@ import { Box, Stack, StackProps } from "@mui/material";
 import AnimatedPic from "components/Animations/AnimatedPic";
 import H1 from "components/Typography/H1";
 import P1 from "components/Typography/P1";
-import { HOME_CONTENT } from "configs/constant";
 
 import { HighlightPhrases } from "utils/highlightText";
 import ActionsSection from "./ActionsSection";
 import ResumeButton from "./resume/ResumeButton";
+import { UserInfoType } from "helpers/types";
 
-export interface HeroSectionProps extends StackProps {}
+export interface HeroSectionProps extends StackProps {
+  userInfo: Partial<UserInfoType>;
+}
 
-const HeroSection: React.FC<HeroSectionProps> = ({ ...props }) => {
-  const summary = HighlightPhrases(HOME_CONTENT.summary);
+const HeroSection: React.FC<HeroSectionProps> = ({ userInfo, ...props }) => {
+  const summary = HighlightPhrases(userInfo.summary || "");
   return (
     <Stack
       spacing={{ xs: 0, md: 6 }}
@@ -23,8 +25,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ...props }) => {
       p={3}
       {...props}
     >
-      <Stack display={{ xs: "none", md: "flex" }} pb={{ xs: 4, md: 2 }} justifyContent='center'>
-        <AnimatedPic imageUrl={HOME_CONTENT.pic} />
+      <Stack
+        display={{ xs: "none", md: "flex" }}
+        pb={{ xs: 4, md: 2 }}
+        justifyContent="center"
+      >
+        <AnimatedPic imageUrl={userInfo.imageUrl || ""} />
       </Stack>
       <Stack
         justifyContent="space-between"
@@ -44,11 +50,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ...props }) => {
               Hi There, I'm
             </P1>
             <H1 gutterBottom textAlign="center">
-              Abdulrahman Alkhalaileh
+              {userInfo.name}
             </H1>
           </Box>
           <Stack display={{ xs: "flex", md: "none" }} pb={4}>
-            <AnimatedPic imageUrl={HOME_CONTENT.pic} />
+            <AnimatedPic imageUrl={userInfo.imageUrl || ""} />
           </Stack>
           <P1
             fontWeight={500}

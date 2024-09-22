@@ -2,12 +2,12 @@ import React from "react";
 import { Divider, IconButton, Stack, StackProps, SxProps } from "@mui/material";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import DownloadIcon from "@mui/icons-material/Download";
-import { HOME_CONTENT } from "configs/constant";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 
 export interface ResumeActionsProps extends StackProps {
   fullScreen: boolean;
   handleFullScreen: () => void;
+  resumeLink: string;
 }
 
 const iconStyle: SxProps = {
@@ -19,6 +19,7 @@ const iconStyle: SxProps = {
 const ResumeActions: React.FC<ResumeActionsProps> = ({
   fullScreen,
   handleFullScreen,
+  resumeLink,
   ...props
 }) => {
   return (
@@ -56,7 +57,7 @@ const ResumeActions: React.FC<ResumeActionsProps> = ({
           sx={{ borderColor: "inherit" }}
         />
         <IconButton
-          href={HOME_CONTENT.resume}
+          href={resumeLink}
           download="Abdulrahman-Alkhalaileh.pdf"
           sx={{
             borderRadius: 0,
