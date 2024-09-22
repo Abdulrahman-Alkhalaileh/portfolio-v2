@@ -4,8 +4,8 @@ import { Stack } from "@mui/material";
 import P1 from "components/Typography/P1";
 import H2 from "components/Typography/H2";
 import Slider from "components/Slider/AutoScrollSlider";
-import HeroSection from "./partials.tsx/HeroSection";
-import { useAppSelector } from "reduxConfigs/store";
+import HeroSection from "./partials/HeroSection";
+import { useAppSelector } from "configs/redux/store";
 import PageSuspense from "components/Suspense/PageSuspense";
 
 const Home: React.FC = () => {

@@ -5,9 +5,9 @@ import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
 import { SKILLS_CONTENT } from "configs/constant";
-import { useAppDispatch, useAppSelector } from "reduxConfigs/store";
+import { useAppDispatch, useAppSelector } from "configs/redux/store";
 import PageSuspense from "components/Suspense/PageSuspense";
-import { fetchTechnicalSkills } from "reduxConfigs/slices/firestoreSlice";
+import { fetchTechnicalSkills } from "configs/redux/slices/firestoreSlice";
 
 export interface SkillsProps extends StackProps {}
 

@@ -1,13 +1,15 @@
 import React from "react";
 import { Box, Button, IconButton, Stack, StackProps } from "@mui/material";
-import { HOME_CONTENT } from "configs/constant";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import { UserLinksType } from "helpers/types";
 
-export interface ActionsSectionProps extends StackProps {}
+export interface ActionsSectionProps extends StackProps {
+  links: UserLinksType;
+}
 
-const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
+const ActionsSection: React.FC<ActionsSectionProps> = ({ links,...props }) => {
   return (
     <Stack
       boxSizing="border-box"
@@ -28,7 +30,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
         borderRadius={3}
         bgcolor={{ xs: "backgroundColor.main", sm: "transparent" }}
       >
-        <IconButton color="inherit" href={`mailto:${HOME_CONTENT.email}`}>
+        <IconButton color="inherit" href={`mailto:${links.email}`}>
           <EmailIcon
             sx={{
               width: { xs: 30, sm: 35, lg: 40 },
@@ -36,7 +38,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
             }}
           />
         </IconButton>
-        <IconButton color="inherit" href={HOME_CONTENT.github}>
+        <IconButton color="inherit" href={links.github}>
           <GitHubIcon
             sx={{
               width: { xs: 30, sm: 35, lg: 40 },
@@ -44,7 +46,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
             }}
           />
         </IconButton>
-        <IconButton color="inherit" href={HOME_CONTENT.linkedId}>
+        <IconButton color="inherit" href={links.linkedIn}>
           <LinkedInIcon
             sx={{
               width: { xs: 30, sm: 35, lg: 40 },
@@ -63,7 +65,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
         <Button
           variant="contained"
           color="secondary"
-          href={HOME_CONTENT.linkedId}
+          href={links.linkedIn}
           fullWidth
           sx={{
             border: 2,
@@ -78,7 +80,7 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ ...props }) => {
         <Button
           fullWidth
           variant="contained"
-          href={`mailto:${HOME_CONTENT.email}`}
+          href={`mailto:${links.email}`}
           color="secondary"
           sx={{
             border: 2,

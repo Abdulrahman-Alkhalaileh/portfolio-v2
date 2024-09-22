@@ -10,11 +10,11 @@ import ResumeButton from "./resume/ResumeButton";
 import { UserInfoType } from "helpers/types";
 
 export interface HeroSectionProps extends StackProps {
-  userInfo: Partial<UserInfoType>;
+  userInfo: UserInfoType;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ userInfo, ...props }) => {
-  const summary = HighlightPhrases(userInfo.summary || "");
+  const summary = HighlightPhrases(userInfo.summary);
   return (
     <Stack
       spacing={{ xs: 0, md: 6 }}
@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ userInfo, ...props }) => {
         pb={{ xs: 4, md: 2 }}
         justifyContent="center"
       >
-        <AnimatedPic imageUrl={userInfo.imageUrl || ""} />
+        <AnimatedPic imageUrl={userInfo.imageUrl} />
       </Stack>
       <Stack
         justifyContent="space-between"
@@ -49,12 +49,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ userInfo, ...props }) => {
             <P1 fontWeight={900} textAlign={{ xs: "center", sm: "start" }}>
               Hi There, I'm
             </P1>
-            <H1 gutterBottom textAlign="center">
+            <H1 gutterBottom textAlign={{ xs: "center", md: "left" }}>
               {userInfo.name}
             </H1>
           </Box>
           <Stack display={{ xs: "flex", md: "none" }} pb={4}>
-            <AnimatedPic imageUrl={userInfo.imageUrl || ""} />
+            <AnimatedPic imageUrl={userInfo.imageUrl} />
           </Stack>
           <P1
             fontWeight={500}
@@ -63,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ userInfo, ...props }) => {
           ></P1>
         </Stack>
         <ResumeButton />
-        <ActionsSection />
+        <ActionsSection links={userInfo.links} />
       </Stack>
     </Stack>
   );

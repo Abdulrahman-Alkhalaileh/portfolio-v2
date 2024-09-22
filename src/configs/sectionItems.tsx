@@ -1,4 +1,4 @@
-import Home from "pages/Home/Home";
+import About from "pages/About/About";
 import HomeIcon from "@mui/icons-material/Home";
 
 import Skills from "pages/Skills/Skills";
@@ -22,7 +22,7 @@ export const sections: AnimatedItemType[] = [
   {
     index: 0,
     name: "about",
-    element: <Home />,
+    element: <About />,
     path: "/",
     icon: <HomeIcon />,
   },

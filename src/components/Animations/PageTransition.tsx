@@ -11,7 +11,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({
 }) => {
   return (
     <motion.div
-      transition={{ duration: 1, ease: "circOut", stiffness: 50 }}
+      transition={{ duration: 0.3, ease: "circOut", stiffness: 50 }}
       animate={{ opacity: 1 }}
       {...props}
       style={{
