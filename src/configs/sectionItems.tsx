@@ -1,13 +1,13 @@
-import Home from "Sections/Home/Home";
+import Home from "pages/Home/Home";
 import HomeIcon from "@mui/icons-material/Home";
 
-import Skills from "Sections/Skills/Skills";
+import Skills from "pages/Skills/Skills";
 import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
 
-import Experience from "Sections/Experience/Experience";
+import Experience from "pages/Experience/Experience";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 
-import Projects from "Sections/Projects/Projects";
+import Projects from "pages/Projects/Projects";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 
 export interface AnimatedItemType {

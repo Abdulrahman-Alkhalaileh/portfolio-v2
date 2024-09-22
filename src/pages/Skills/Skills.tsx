@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Stack, StackProps } from "@mui/material";
 import H2 from "components/Typography/H2";
-import { SkillsType } from "helpers/types";
-import { fetchData } from "helpers/fetchData";
 import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
 import { SKILLS_CONTENT } from "configs/constant";
+import { useAppDispatch, useAppSelector } from "reduxConfigs/store";
+import PageSuspense from "components/Suspense/PageSuspense";
+import { fetchTechnicalSkills } from "reduxConfigs/slices/firestoreSlice";
 
 export interface SkillsProps extends StackProps {}
 
 const Skills: React.FC<SkillsProps> = ({ ...props }) => {
-  const [personalSkills, setPersonalSkills] = useState<SkillsType[]>();
-  const [technicalSkills, setTechnicalSkills] = useState<SkillsType[]>();
+  const { personalSkills, technicalSkills, loading } = useAppSelector(
+    (store) => store.firestoreSlice
+  );
+  const dispatcher = useAppDispatch();
 
   useEffect(() => {
-    fetchData({collectionName:"personalSkills"}).then((data) =>
-      setPersonalSkills(data as SkillsType[])
-    );
-    fetchData({collectionName:"technicalSkills",sort:{order:'desc'}}).then((data) => {
-      setTechnicalSkills(data as SkillsType[]);
-    });
-  }, []);
+    dispatcher(fetchTechnicalSkills({ order: "desc", field: "id" }));
+  }, [dispatcher]);
+
+  if (loading) return <PageSuspense flex={1} />;
 
   return (
     <PageTransition>

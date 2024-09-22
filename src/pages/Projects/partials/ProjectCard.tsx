@@ -5,7 +5,7 @@ import { Box, Button, CardActions, Chip, Divider, Stack } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import H1 from "components/Typography/H1";
 import H4 from "components/Typography/H4";
-import ProjectModal from "Sections/Projects/partials/ProjectModal";
+import ProjectModal from "./ProjectModal";
 import { ProjectType } from "helpers/types";
 
 export interface ProjectCardProps extends CardProps {

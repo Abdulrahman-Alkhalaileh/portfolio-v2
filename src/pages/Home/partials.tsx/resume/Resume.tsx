@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 import ResumeActions from "./ResumeActions";
+import { useAppSelector } from "reduxConfigs/store";
 
 export interface ResumeProps {}
 
 const Resume: React.FC<ResumeProps> = ({ ...props }) => {
+  const { userInfo } = useAppSelector((store) => store.firestoreSlice);
   const iframeRef = useRef<HTMLDivElement>(null);
   const [fullScreen, setFullScreen] = useState(false);
 
@@ -47,23 +49,25 @@ const Resume: React.FC<ResumeProps> = ({ ...props }) => {
           style={{
             position: "absolute",
             width: "100%",
-            height: fullScreen ? "100vh" : "100%",
+            height: fullScreen ? "100dvh" : "100%",
             top: 0,
             left: 0,
             border: "none",
             padding: 0,
             margin: 0,
           }}
-          src="https://www.canva.com/design/DAFmjLtsppU/8IMTjKRTIsD7ELG6tNMKlw/view?embed"
+          src={userInfo?.links.resume.embed}
         ></iframe>
         {fullScreen && (
           <ResumeActions
+            resumeLink={userInfo?.links.resume.pdf || ""}
             fullScreen={fullScreen}
             handleFullScreen={handleFullscreen}
           />
         )}
       </div>
       <ResumeActions
+        resumeLink={userInfo?.links.resume.pdf || ""}
         fullScreen={fullScreen}
         handleFullScreen={handleFullscreen}
       />

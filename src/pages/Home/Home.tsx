@@ -1,30 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PageTransition from "components/Animations/PageTransition";
 import { Stack } from "@mui/material";
 import P1 from "components/Typography/P1";
-import { fetchData } from "helpers/fetchData";
-import { SkillsType } from "helpers/types";
 import H2 from "components/Typography/H2";
 import Slider from "components/Slider/AutoScrollSlider";
 import HeroSection from "./partials.tsx/HeroSection";
+import { useAppSelector } from "reduxConfigs/store";
+import PageSuspense from "components/Suspense/PageSuspense";
 
-export interface HomeProps {}
+const Home: React.FC = () => {
+  const { technicalSkills, userInfo, loading } = useAppSelector(
+    (state) => state.firestoreSlice
+  );
 
-const Home: React.FC<HomeProps> = ({ ...props }) => {
-  const [skills, setSkills] = useState<SkillsType[]>([]);
-  // const [projects, setProjects] = useState<ProjectType[]>([]);
-  useEffect(() => {
-    fetchData({collectionName:"technicalSkills"}).then((data) =>
-      setSkills(data as SkillsType[])
-    );
-    // fetchData("projects").then((data) => setProjects(data as ProjectType[]));
-  }, []);
-  // console.log(projects);
+  if (loading) return <PageSuspense flex={1} />;
 
   return (
     <PageTransition>
       <Stack spacing={5}>
-        <HeroSection />
+        {userInfo && <HeroSection userInfo={userInfo} />}
         <Stack
           direction={{ xs: "column", lg: "row" }}
           justifyContent="space-around"
@@ -37,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
             <P1 fontWeight={900}>I have</P1>
             <H2>Experience With</H2>
           </Stack>
-          <Slider items={skills} />
+          {technicalSkills && <Slider items={technicalSkills} />}
         </Stack>
       </Stack>
     </PageTransition>

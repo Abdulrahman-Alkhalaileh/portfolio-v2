@@ -24,3 +24,17 @@ export interface SkillsType extends BaseType {
   title: string;
   imageUrl: string;
 }
+
+export interface UserLinksType {
+  email: string;
+  linkedIn: string;
+  github: string;
+  resume: { pdf: string; embed: string };
+}
+
+export interface UserInfoType extends BaseType {
+  name: string;
+  imageUrl: string;
+  summary: string;
+  links: UserLinksType;
+}
