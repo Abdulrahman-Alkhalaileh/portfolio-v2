@@ -5,7 +5,7 @@ import ViewInfo from "./partials/ExperienceInfo";
 import SummaryCard from "./partials/SummaryCard";
 import PageTransition from "components/Animations/PageTransition";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
-import { useAppSelector } from "reduxConfigs/store";
+import { useAppSelector } from "configs/redux/store";
 import PageSuspense from "components/Suspense/PageSuspense";
 
 export interface ExperienceProps extends BoxProps {}

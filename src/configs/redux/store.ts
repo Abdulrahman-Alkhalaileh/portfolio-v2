@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import firestoreSlice from "./slices/firestoreSlice";
+import firestoreSlice from "configs/redux/slices/firestoreSlice";
 
 export const store = configureStore({
   reducer: {

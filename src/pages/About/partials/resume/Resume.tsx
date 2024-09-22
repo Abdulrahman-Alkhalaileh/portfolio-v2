@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import ResumeActions from "./ResumeActions";
-import { useAppSelector } from "reduxConfigs/store";
+import { useAppSelector } from "configs/redux/store";
 
 export interface ResumeProps {}
 
