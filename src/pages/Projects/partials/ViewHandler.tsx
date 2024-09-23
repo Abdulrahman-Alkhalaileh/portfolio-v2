@@ -11,6 +11,33 @@ const iconSize: SxProps = {
   height: { xs: 20, sm: 25, md: 30 },
 };
 
+const ViewButton = ({
+  disabled,
+  link,
+  icon,
+}: {
+  disabled: boolean;
+  link: string;
+  icon: React.ReactNode;
+}) => {
+  return (
+    <Button
+      disabled={disabled}
+      sx={{
+        p: 0,
+        "&.Mui-disabled": {
+          bgcolor: "primary.main",
+          color: "primary.contrastText",
+        },
+      }}
+    >
+      <Link to={link} style={{ display: "flex", padding: "6px 16px" }}>
+        {icon}
+      </Link>
+    </Button>
+  );
+};
+
 const ViewHandler: React.FC<ViewHandlerProps> = ({ ...props }) => {
   const [searchParams] = useSearchParams();
   const view = searchParams.get("view");
@@ -22,16 +49,16 @@ const ViewHandler: React.FC<ViewHandlerProps> = ({ ...props }) => {
       {...props}
       sx={{ borderRadius: 3, ...props.sx }}
     >
-      <Link to="?view=grid">
-        <Button disabled={view === "grid"}>
-          <WindowIcon sx={iconSize} />
-        </Button>
-      </Link>
-      <Link to="?view=slider">
-        <Button disabled={view === "slider" || !view}>
-          <AutoAwesomeMotionIcon sx={iconSize} />
-        </Button>
-      </Link>
+      <ViewButton
+        link="?view=grid"
+        icon={<WindowIcon sx={iconSize} />}
+        disabled={view === "grid"}
+      />
+      <ViewButton
+        link="?view=slider"
+        icon={<AutoAwesomeMotionIcon sx={iconSize} />}
+        disabled={view === "slider" || !view}
+      />
     </ButtonGroup>
   );
 };
