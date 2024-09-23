@@ -28,7 +28,7 @@ const sliderStyle = {
   stack: {
     gap: { xs: 1, md: 3 },
   },
-  chip: { fontSize: { xs: 14, md: 17, lg: 22 } },
+  chip: { py: 2.3,fontSize: { xs: 14, md: 17, lg: 22 } },
   image: {
     height: { xs: 200, md: 400 },
     width: { xs: "100%", md: "50%" },
@@ -41,7 +41,7 @@ const gridStyle = {
   card: { width: "auto", flexDirection: "column-reverse", flexGrow: 1 },
   cardContent: { p: 1, gap: 0.5 },
   stack: { gap: 1 },
-  chip: { fontSize: 15 },
+  chip: { py: 1,fontSize: 15 },
   image: { height: 200, width: "100%", m: 0, borderRadius: "20px 20px 0 0" },
 };
 
@@ -85,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ type, data, ...props }) => {
               <Chip
                 key={crypto.randomUUID()}
                 label={item}
-                sx={{ py: 2.3, ...style.chip }}
+                sx={{  ...style.chip }}
               />
             ))}
           </Box>
