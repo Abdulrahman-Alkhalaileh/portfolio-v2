@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Stack, StackProps } from "@mui/material";
 import H2 from "components/Typography/H2";
 import PageTransition from "components/Animations/PageTransition";
 import DraggingList from "components/Lists/DraggingList";
 import DraggableIndicator from "components/Animations/DraggableIndecator";
 import { SKILLS_CONTENT } from "configs/constant";
-import { useAppDispatch, useAppSelector } from "configs/redux/store";
+import { useAppSelector } from "configs/redux/store";
 import PageSuspense from "components/Suspense/PageSuspense";
-import { fetchTechnicalSkills } from "configs/redux/slices/firestoreSlice";
+import { sortDataById } from "utils/sort";
 
 export interface SkillsProps extends StackProps {}
 
@@ -15,11 +15,10 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
   const { personalSkills, technicalSkills, loading } = useAppSelector(
     (store) => store.firestoreSlice
   );
-  const dispatcher = useAppDispatch();
 
-  useEffect(() => {
-    dispatcher(fetchTechnicalSkills({ order: "desc", field: "id" }));
-  }, [dispatcher]);
+  const sortedTechnicalSkills = !!technicalSkills
+    ? sortDataById(technicalSkills, "desc")
+    : [];
 
   if (loading) return <PageSuspense flex={1} />;
 
@@ -79,7 +78,7 @@ const Skills: React.FC<SkillsProps> = ({ ...props }) => {
               }}
             />
             <H2 gutterBottom>Technical Skills:</H2>
-            <DraggingList data={technicalSkills} />
+            <DraggingList data={sortedTechnicalSkills} />
           </Stack>
         </Stack>
       )}
